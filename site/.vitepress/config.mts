@@ -2,22 +2,22 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: 'Lore Forge',
-  description: 'AI-Assisted Narrative Design Framework',
+  description: 'AI 辅助叙事设计框架',
   base: '/lore-forge/',
   ignoreDeadLinks: true,
   themeConfig: {
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Getting Started', link: '/getting-started' },
+      { text: '首页', link: '/' },
+      { text: '开始使用', link: '/getting-started' },
     ],
     sidebar: [
       {
-        text: 'Framework',
+        text: '框架',
         items: [
-          { text: 'Getting Started', link: '/getting-started' },
-          { text: 'Architecture', link: '/architecture' },
-          { text: 'Workflow', link: '/workflow' },
-          { text: 'Project Structure', link: '/project-structure' },
+          { text: '开始使用', link: '/getting-started' },
+          { text: '架构', link: '/architecture' },
+          { text: '工作流', link: '/workflow' },
+          { text: '项目结构', link: '/project-structure' },
         ],
       },
       {
@@ -43,7 +43,7 @@ export default defineConfig({
       },
     ],
     socialLinks: [
-      { icon: 'github', link: 'https://github.com' },
+      { icon: 'github', link: 'https://github.com/immane/lore-forge' },
     ],
   },
 })
