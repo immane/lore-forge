@@ -1,22 +1,22 @@
 # Chapter Planning
 
-## 作用
+## Purpose
 
-`Chapter Planning` 负责把 Story Bible 的宏观信息组织成章节、路线或分支的大纲结构，是 Narrative Designer 的核心规划流程。
+`Chapter Planning` organizes Story Bible macro information into chapter, route, or branch outlines. It is the core planning workflow for Narrative Designer.
 
-## 触发条件
+## Trigger Conditions
 
-- `story/vision.md`、`story/themes.md`、`story/emotional_core.md`、`story/timeline.md` 已建立
-- 主要角色已存在
-- `story/ending_design.md` 已定义
-- 用户要求规划章节或故事大纲
-- 用户显式要求进入 Phase 3 或 Phase 5
+- `story/vision.md`, `story/themes.md`, `story/emotional_core.md`, and `story/timeline.md` exist
+- major cast exists
+- `story/ending_design.md` exists
+- the user asks for chapter planning or story outlining
+- the user explicitly asks to enter Phase 3 or Phase 5
 
-## 负责 Agent
+## Responsible Agent
 
 Narrative Designer
 
-## 依赖
+## Dependencies
 
 - `story/vision.md`
 - `story/themes.md`
@@ -24,66 +24,66 @@ Narrative Designer
 - `story/timeline.md`
 - `story/ending_design.md`
 - `characters/_index.md`
-- 角色档案
+- character files
 - `knowledge/canon.md`
 - `knowledge/rules.md`
 
-## 工作流结构
+## Workflow Structure
 
-### Step 1：定义幕结构
+### Step 1: Define Act Structure
 
-1. 使用几幕结构？
-2. 每幕的闭合事件是什么？
-3. 全局张力曲线如何变化？
+1. how many acts are needed?
+2. what closes each act?
+3. how does the global tension curve evolve?
 
-### Step 2：分配章节职责
+### Step 2: Assign Chapter Jobs
 
-4. 每章突出哪个主题？
-5. 每章推进哪个角色弧？
-6. 每章主导情绪是什么？
-7. 每章释放哪些信息？
+4. which theme leads each chapter?
+5. which character arc advances in each chapter?
+6. what is the dominant emotional register per chapter?
+7. what information is revealed in each chapter?
 
-### Step 3：构建依赖图
+### Step 3: Build Dependency Graph
 
-8. 哪些章节必须先发生？
-9. 哪些线程可以并行？
-10. 哪些地方会发生线索汇聚？
+8. which chapters must happen first?
+9. which threads can run in parallel?
+10. where do threads converge?
 
-### Step 4：细化章节
+### Step 4: Detail Chapters
 
-11. 标题
-12. 2-3 句概要
+11. title
+12. short synopsis
 13. POV
-14. 戏剧功能
-15. 情感弧线
-16. 所需场景
-17. 所需角色
-18. 伏笔任务
-19. 节奏
+14. dramatic function
+15. emotional arc
+16. required scenes
+17. required characters
+18. foreshadowing tasks
+19. pacing
 
-### Step 5：与结局对齐
+### Step 5: Align With Endings
 
-20. 从结局反推每条路径
-21. 标记不可逆节点
-22. 确认所有结局都能从章节结构中到达
+20. trace each ending backward through the structure
+21. mark irreversible points
+22. verify that all endings remain reachable
 
 ## Inputs
 
-- Story Bible 宏观模块
-- 角色档案与索引
+- Story Bible macro modules
+- character profiles and registry
 
 ## Outputs
 
 - `story/chapters/_outline.md`
-- `story/chapters/` 占位结构
-- `story/timeline.md` 更新
-- `story/foreshadowing.md` 更新
-- `story/emotional_map.md` 更新
+- placeholder structure under `story/chapters/`
+- updated `story/timeline.md`
+- updated `story/foreshadowing.md`
+- updated `story/emotional_map.md`
 
-## 校验规则
+## Validation Rules
 
-- 每章至少推进剧情、角色弧或主题之一
-- 章节顺序不得违背已知时间线
-- 每个结局都必须能从结构中追溯到路径
-- 引入新规则时必须更新 `knowledge/rules.md`
-- 依赖图必须无环
+- each chapter must advance plot, character arc, theme, or more than one of them
+- chapter order must not violate the known timeline
+- each ending must remain structurally traceable
+- new world rules must also be registered in `knowledge/rules.md`
+- the dependency graph must stay acyclic

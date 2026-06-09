@@ -1,60 +1,60 @@
-# 项目结构
+# Project Structure
 
-```
+```text
 project-root/
-├── .bootstrap/          # 框架自举与升级
-├── agents/              # 5 个 Agent 定义
-├── prompts/             # 6 个工作流 Prompt
-├── templates/           # 3 类项目模板
-├── docs/                # 框架文档内容
-├── site/                # GitHub Pages 站点容器
-└── projects/            # 用户项目工作区
-    ├── active/          # 正在开发的项目
-    ├── archived/        # 已归档项目
-    └── templates/       # 用户自定义模板
+├── .bootstrap/          # framework bootstrap and upgrade
+├── agents/              # 5 agent definitions
+├── prompts/             # 6 workflow prompts
+├── templates/           # 3 project template families
+├── docs/                # framework documentation content
+├── site/                # GitHub Pages site container
+└── projects/            # user project workspace
+    ├── active/          # active projects
+    ├── archived/        # archived projects
+    └── templates/       # user-defined templates
 ```
 
-## 项目级 Story Bible 结构
+## Story Bible Project Structure
 
-```
+```text
 projects/active/my-story/
-├── project.md           # 项目元信息
-├── story/               # 叙事设计
+├── project.md           # project metadata
+├── story/               # narrative design
 │   ├── vision.md
 │   ├── themes.md
 │   ├── emotional_core.md
 │   ├── timeline.md
 │   ├── foreshadowing.md
 │   ├── ending_design.md
-│   └── chapters/        # 或 routes/ / branches/
-├── characters/          # 角色档案
-├── memories/            # 记忆图谱
-├── locations/           # 地点档案
-├── dialogue/            # 对白脚本
-├── quests/              # 或 events/
-├── knowledge/           # 知识层
+│   └── chapters/        # or routes/ / branches/
+├── characters/          # character profiles
+├── memories/            # memory graph
+├── locations/           # location profiles
+├── dialogue/            # dialogue scripts
+├── quests/              # or events/
+├── knowledge/           # knowledge layer
 │   ├── canon.md
 │   ├── glossary.md
 │   ├── rules.md
 │   ├── symbolism.md
 │   └── emotional_map.md
-├── exports/             # 引擎导出结果
-└── _audit/              # 一致性审计报告
+├── exports/             # engine export outputs
+└── _audit/              # consistency audit reports
 ```
 
-## 各目录职责
+## Responsibility Of Each Directory
 
 ### `.bootstrap/`
 
-负责框架本身建设，包括：
+Builds and upgrades the framework itself, including:
 
-- 架构定义
-- 项目初始化
-- 故事访谈入口
+- architecture definition
+- project initialization entry points
+- story interview entry points
 
 ### `agents/`
 
-存放长期角色 Agent 的定义。每个 Agent 都有明确的：
+Stores long-lived role definitions. Each agent specifies:
 
 - Purpose
 - Inputs
@@ -64,7 +64,7 @@ projects/active/my-story/
 
 ### `prompts/`
 
-存放工作流级 Prompt。每个 Prompt 都规定：
+Stores workflow-level prompts. Each prompt specifies:
 
 - Inputs
 - Outputs
@@ -73,7 +73,7 @@ projects/active/my-story/
 
 ### `templates/`
 
-定义不同类型项目的起始骨架。当前包括：
+Defines starting skeletons for different project types:
 
 - Narrative RPG
 - Visual Novel
@@ -81,11 +81,11 @@ projects/active/my-story/
 
 ### `projects/`
 
-所有真实作品内容都必须放在这里。框架文件不得混入 `projects/`。
+All real story content must live here. Framework files must not be mixed into `projects/`.
 
-## 结构设计原则
+## Structural Principles
 
-- 框架与作品分离
-- 内容层与展示层分离
-- 文档、Agent、Prompt、模板各有独立职责
-- Story Bible 必须能够长期迭代而不失控
+- framework and story projects must remain separate
+- content layer and presentation layer must remain separate
+- docs, agents, prompts, and templates each keep independent responsibilities
+- Story Bible must be able to evolve over time without losing consistency

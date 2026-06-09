@@ -1,62 +1,62 @@
 # Interview
 
-## 作用
+## Purpose
 
-`Interview` 是概念探索阶段的核心工作流。它通过结构化提问，把创作者脑海中的模糊想法提取成可维护的 Story Bible 基础。
+`Interview` is the core workflow of the concept discovery phase. It uses structured questions to extract vague creator ideas and turn them into maintainable Story Bible foundations.
 
-## 触发条件
+## Trigger Conditions
 
-- 新项目刚创建完成
-- 用户表示“想开始一个新故事”
-- 用户希望继续完善世界观核心设定
-- 用户显式要求进入 Phase 1
+- a new project has just been created
+- the user wants to start a new story
+- the user wants to continue defining world foundations
+- the user explicitly asks to enter Phase 1
 
-## 负责 Agent
+## Responsible Agent
 
 Lore Architect
 
-## 依赖
+## Dependencies
 
-- 已存在的项目模板
-- 已初始化的 `project.md`
+- an existing project template
+- an initialized `project.md`
 
-## 工作流结构
+## Workflow Structure
 
-### Step 1：收集背景上下文
+### Step 1: Gather Context
 
-围绕以下问题提问：
+Ask questions around:
 
-1. 作品结束后，玩家/读者应带着什么情绪离开？
-2. 这是一个什么类型、什么基调的故事？
-3. 项目范围是单作、系列还是开放式长期项目？
-4. 这个故事真正要探索的核心问题是什么？
-5. 目标媒介是什么？
-6. 它“感觉上”像哪些作品？
+1. what feeling should the audience carry after the ending?
+2. what genre and tone is this story?
+3. is the project a single work, a series, or an open-ended long-term setting?
+4. what is the real central question of the story?
+5. what is the target medium?
+6. what existing works should it feel like?
 
-### Step 2：建立世界骨架
+### Step 2: Build World Skeleton
 
-继续提问：
+Continue with:
 
-7. 故事发生在什么时间和地点？
-8. 是否存在魔法、科技或超自然规则？
-9. 世界中有哪些势力，它们想要什么？
-10. 哪个历史事件塑造了现在？
+7. when and where does the story take place?
+8. are there magical, technological, or supernatural rules?
+9. what factions exist and what do they want?
+10. what historical event shaped the present?
 
-### Step 3：从结局反推
+### Step 3: Work Backward From Endings
 
-11. 故事应有哪些理想结局？
-12. 有哪些绝对不能发生的事？
+11. what endings should exist?
+12. what must never happen in this story?
 
-### Step 4：抽取约束
+### Step 4: Extract Constraints
 
-13. 有哪些内容边界需要避开？
-14. 有哪些形式约束，如篇幅、章节数、分支复杂度？
+13. what content boundaries should be avoided?
+14. what format constraints exist, such as length, chapter count, or branching complexity?
 
 ## Inputs
 
-- 用户的原始回答
-- 对项目类型的选择
-- 初始 `project.md`
+- user responses
+- chosen project type
+- initial `project.md`
 
 ## Outputs
 
@@ -64,15 +64,15 @@ Lore Architect
 - `story/vision.md`
 - `story/themes.md`
 - `story/emotional_core.md`
-- `story/timeline.md` 初稿
-- `story/ending_design.md` 初稿
-- `knowledge/canon.md` 初稿
-- `knowledge/glossary.md` 初稿
-- `knowledge/rules.md` 初稿
+- initial `story/timeline.md`
+- initial `story/ending_design.md`
+- initial `knowledge/canon.md`
+- initial `knowledge/glossary.md`
+- initial `knowledge/rules.md`
 
-## 校验规则
+## Validation Rules
 
-- `story/vision.md` 应压缩成一个段落
-- 每个主题都应能映射到后续章节或场景
-- 世界规则必须可验证、可被违反、可被审查
-- 用户答不上来的问题必须标记为 `_pending`，不能私自补全
+- `story/vision.md` should stay one paragraph
+- every theme should map to later scenes or chapters
+- world rules must be testable and auditable
+- unanswered questions must be marked as `_pending` instead of invented

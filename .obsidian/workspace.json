@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "site/architecture.md",
+                "file": "site/zh/getting-started.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "architecture"
+              "title": "getting-started"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "site/architecture.md",
+                "file": "site/zh/getting-started.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for architecture"
+              "title": "Backlinks for getting-started"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "site/architecture.md",
+                "file": "site/zh/getting-started.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from architecture"
+              "title": "Outgoing links from getting-started"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "site/architecture.md",
+                "file": "site/zh/getting-started.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of architecture"
+              "title": "Outline of getting-started"
             }
           }
         ]
@@ -185,41 +185,41 @@
   },
   "active": "d78664a8a5986d90",
   "lastOpenFiles": [
+    "site/zh/index.md",
+    "site/zh/getting-started.md",
+    "site/zh/architecture.md",
+    "site/zh/prompts/chapter-planning.md",
+    "site/prompts/generate-character.md",
+    "site/prompts/chapter-planning.md",
+    "site/agents/dialogue-writer.md",
+    "site/agents/character-therapist.md",
+    "site/architecture.md",
     "site/getting-started.md",
     "site/index.md",
     "site/project-structure.md",
     "site/workflow.md",
+    "site/zh/prompts/review-consistency.md",
+    "site/zh/prompts/interview.md",
+    "site/zh/prompts/generate-scene.md",
+    "site/zh/prompts/generate-dialogue.md",
+    "site/zh/prompts/generate-character.md",
+    "site/zh/prompts",
+    "site/zh/agents/narrative-designer.md",
+    "site/zh/agents/lore-auditor.md",
+    "site/zh/agents/lore-architect.md",
+    "site/zh/agents/dialogue-writer.md",
+    "site/zh/agents/character-therapist.md",
+    "site/zh/agents",
+    "site/zh/workflow.md",
+    "site/zh/project-structure.md",
+    "site/zh",
     "site/agents/narrative-designer.md",
-    "site/agents/lore-auditor.md",
-    "site/agents/lore-architect.md",
-    "site/agents/dialogue-writer.md",
-    "site/agents/character-therapist.md",
-    "site/prompts/review-consistency.md",
-    "site/prompts/interview.md",
-    "site/prompts/generate-scene.md",
-    "site/prompts/generate-dialogue.md",
-    "site/prompts/generate-character.md",
-    "site/prompts/chapter-planning.md",
-    "site/architecture.md",
-    "README.zh-cn.md",
-    "docs/workflow.md",
-    "docs/architecture.md",
-    "docs/agents/character-therapist.md",
-    "docs/export_pipeline.md",
-    "docs/style_guide.md",
-    "docs/project_structure.md",
     "site/prompts",
     "site/agents",
-    "docs/prompts/review-consistency.md",
-    "docs/prompts/interview.md",
-    "docs/prompts/generate-scene.md",
     "site/public",
     "site",
     "LICENSE",
     "docs/prompts",
-    "docs/agents",
-    "docs/public",
-    "projects/active",
-    "projects/templates"
+    "docs/agents"
   ]
 }

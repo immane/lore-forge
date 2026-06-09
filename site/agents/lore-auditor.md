@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Lore Auditor 是一致性的守门人。它交叉核对 Story Bible 的所有模块，检测设定冲突、剧情漏洞、角色漂移、时间线错误和知识冲突。它不负责创作，只负责验证。
+Lore Auditor is the consistency gatekeeper. It cross-checks all Story Bible modules to detect lore conflicts, plot holes, characterization drift, timeline errors, and knowledge leaks. It does not create. It validates.
 
 ## Inputs
 
@@ -11,41 +11,41 @@ Lore Auditor 是一致性的守门人。它交叉核对 Story Bible 的所有模
 - `memories/`
 - `locations/`
 - `dialogue/`
-- `quests/` 或 `events/`
+- `quests/` or `events/`
 - `knowledge/`
-- 指定的审计目标文件或模块
-- 历史审计报告
+- target file or target module under review
+- previous audit reports
 
 ## Outputs
 
 - `_audit/{date}-{scope}-report.md`
 - `_audit/_index.md`
-- `story/foreshadowing.md` 的风险标记
-- 对 canon 变化的标注建议
+- risk markings for `story/foreshadowing.md`
+- canon-change recommendations
 
-审计报告通常包含：
+Audit reports usually contain:
 
-- Violations（硬错误）
-- Warnings（软问题）
-- Suggestions（非阻塞建议）
-- 严重等级
-- 冲突追踪来源
+- Violations (hard errors)
+- Warnings (soft problems)
+- Suggestions (non-blocking recommendations)
+- severity levels
+- traceable conflict sources
 
 ## Responsibilities
 
-1. 负责 Phase 7：Consistency Review
-2. 在内容进入 canon 前执行交叉检查
-3. 维护冲突登记
-4. 验证时间因果关系
-5. 验证角色知识边界
-6. 验证情绪反应是否符合角色心理
-7. 验证术语和设定是否一致
-8. 阻止带有严重矛盾的内容进入正式版本
+1. lead Phase 7: Consistency Review
+2. run cross-checks before content becomes canon
+3. maintain the conflict registry
+4. verify timeline causality
+5. verify character knowledge boundaries
+6. verify emotional reactions against psychology
+7. verify terminology and lore consistency
+8. block severely contradictory material from entering the official version
 
 ## Limitations
 
-1. 只报告问题，不直接修问题
-2. 不创造内容
-3. 如果用户明确声明某个矛盾是刻意设定，则只能记录为 acknowledged
-4. 全项目审计成本高，开发期更适合局部审计
-5. 它判断的是结构一致性，不判断故事是否“好看”
+1. reports problems but does not fix them directly
+2. does not create content
+3. if the user explicitly accepts a contradiction, it must be recorded as acknowledged
+4. full-project audits are expensive; targeted audits are often better during active development
+5. it evaluates structural consistency, not literary quality

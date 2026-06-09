@@ -1,92 +1,92 @@
 # Review Consistency
 
-## 作用
+## Purpose
 
-`Review Consistency` 是 Lore Auditor 执行跨模块审计的标准工作流。它负责在内容被正式接受前，检查结构、逻辑、知识边界和伏笔回收是否一致。
+`Review Consistency` is the standard cross-module audit workflow used by Lore Auditor. It checks structural, logical, knowledge-boundary, and foreshadowing consistency before content is formally accepted.
 
-## 触发条件
+## Trigger Conditions
 
-- 有新内容准备进入 canon
-- 用户要求检查一致性或审计 Story Bible
-- 某个里程碑阶段结束
-- 任何导出操作之前
-- 用户显式要求进入 Phase 7
+- new material is about to enter canon
+- the user asks for consistency review or Story Bible audit
+- a milestone phase has completed
+- any export operation is about to run
+- the user explicitly asks to enter Phase 7
 
-## 负责 Agent
+## Responsible Agent
 
 Lore Auditor
 
-## 依赖
+## Dependencies
 
-- Story Bible 全模块只读访问
-- 指定的审计目标
-- 历史审计报告
+- read-only access to all Story Bible modules
+- target audit artifact(s)
+- previous audit reports
 
-## 工作流结构
+## Workflow Structure
 
-### Step 1：定义审计范围
+### Step 1: Define Audit Scope
 
-1. 目标是单文件、模块还是全项目？
-2. 是局部检查还是全量交叉检查？
-3. 参考哪份历史报告？
+1. is the target a single file, a module, or the full project?
+2. is this targeted checking or full cross-checking?
+3. which historical report is the baseline?
 
-### Step 2：时间线检查
+### Step 2: Timeline Checks
 
-4. 因果是否成立？
-5. 日期顺序是否正确？
-6. 持续时间是否合理？
-7. 并发事件是否冲突？
+4. does causality hold?
+5. are dated events in the correct order?
+6. are durations plausible?
+7. do concurrent events conflict?
 
-### Step 3：角色一致性检查
+### Step 3: Character Consistency Checks
 
-8. 是否有知识越界？
-9. 行为是否符合心理档案？
-10. 对白声音是否符合角色定义？
-11. 关系是否是双向一致的？
-12. 成长弧是否无故回退？
+8. are there knowledge leaks?
+9. do actions match psychology?
+10. does dialogue voice match character definition?
+11. are relationships bidirectionally consistent?
+12. does a growth arc regress without cause?
 
-### Step 4：世界规则检查
+### Step 4: World Rule Checks
 
-13. 是否违反 `knowledge/rules.md`？
-14. 是否出现规则空洞？
-15. 术语是否与 glossary 一致？
+13. does anything violate `knowledge/rules.md`?
+14. are there unexplained rule gaps?
+15. does terminology stay consistent with the glossary?
 
-### Step 5：叙事结构检查
+### Step 5: Narrative Structure Checks
 
-16. 伏笔是否都能回收？
-17. 主题是否持续一致？
-18. 张力曲线是否偏离规划？
-19. 结局是否仍然可达？
+16. are all planted seeds recoverable?
+17. does theme usage remain coherent?
+18. does the tension curve drift from plan?
+19. are intended endings still reachable?
 
-### Step 6：结果分级
+### Step 6: Classify Findings
 
-20. 按严重度分为 Critical / High / Medium / Low
-21. 为每个问题提供冲突追踪来源
+20. assign severity: Critical / High / Medium / Low
+21. provide traceable conflict sources for each issue
 
-### Step 7：生成报告
+### Step 7: Generate Report
 
-22. 输出结构化报告
-23. 更新审计索引
-24. 将问题路由给对应 Agent
+22. produce a structured report
+23. update the audit index
+24. route issues to the responsible agent
 
 ## Inputs
 
-- 目标文件或模块
-- 全量 Story Bible
-- 历史审计记录
-- 审计范围参数
+- target file(s) or module(s)
+- full Story Bible
+- previous audit history
+- scope parameter
 
 ## Outputs
 
 - `_audit/{date}-{scope}-report.md`
 - `_audit/_index.md`
-- `story/foreshadowing.md` 风险标记
-- 对 canon 变更的建议
+- risk notes for `story/foreshadowing.md`
+- recommendations for canon changes
 
-## 校验规则
+## Validation Rules
 
-- 每个 Critical 问题都必须可追溯到至少两个明确来源
-- 用户明确承认的矛盾必须标记为 acknowledged
-- 全项目审计过大时应建议拆分为模块审计
-- 如果没有问题，必须明确写出“未发现一致性问题”
-- 历史未解决问题必须重新检查并更新状态
+- every Critical issue must be traceable to at least two explicit sources
+- user-approved contradictions must be marked as acknowledged
+- large full-project audits should recommend module-level breakdown when needed
+- if there are no issues, the report must explicitly say so
+- unresolved historical issues must be rechecked and status-updated

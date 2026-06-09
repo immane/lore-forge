@@ -1,39 +1,37 @@
-# 开始使用
+# Getting Started
 
-Lore Forge 设计为与 AI 编程助手协作使用。框架提供结构、Agent、Prompt 和模板；你提供创意方向、回答问题并做最终决策。
+Lore Forge is designed to be used with an AI coding assistant. The framework provides structure, agents, prompts, and templates. You provide creative direction, answer questions, and make final decisions.
 
-本页基于 README.md 中定义的完整用法，给出从空仓库到可导出 Story Bible 的完整流程。
+This page gives the complete end-to-end workflow from a blank repository to an export-ready Story Bible.
 
-## 1. 克隆框架
+## 1. Clone The Framework
 
 ```bash
 git clone https://github.com/immane/lore-forge.git
 cd lore-forge
 ```
 
-然后在你的 AI 助手中打开该仓库。
+Then open the repository in your AI assistant.
 
-## 2. 先验证框架本身
+## 2. Verify The Framework
 
-在创建项目之前，先让 AI 检查 Lore Forge 框架是否完整：
+Before creating a project, ask the AI to validate the framework itself:
 
 ```text
 Read .bootstrap/architect.md. You are now the Lore Forge Architect.
 Verify the framework structure is complete and ready for use.
 ```
 
-这一步会检查：
+This confirms that:
 
-- `.bootstrap/` contains the framework bootstrap instructions
+- `.bootstrap/` contains bootstrap instructions
 - `agents/` contains the five specialized agents
 - `prompts/` contains the six workflow prompts
 - `templates/` contains the three project templates
 
-也就是确保框架不是半成品，而是已经具备完整的生产骨架。
+## 3. Create A New Project
 
-## 3. 创建一个新项目
-
-使用 Project Creator 创建 Story Bible 工作区：
+Use the Project Creator to scaffold a Story Bible workspace:
 
 ```text
 Read .bootstrap/project_creator.md. I want to create a new project.
@@ -46,7 +44,7 @@ Target Length: 6-8 hours
 Target Platform: PC
 ```
 
-预期输出：
+Expected output:
 
 ```text
 projects/moonlight/
@@ -61,11 +59,11 @@ projects/moonlight/
 └── exports/
 ```
 
-这一步不会直接写剧情，而是先建立项目骨架。
+This step creates structure first. It does not start by writing plot prose.
 
-## 4. 进入概念探索
+## 4. Run Concept Discovery
 
-项目目录建好之后，开始概念访谈：
+After the project exists, begin the concept interview:
 
 ```text
 Read .bootstrap/story_interviewer.md.
@@ -76,16 +74,16 @@ Analyze the current Story Bible at projects/moonlight/.
 Start the concept discovery interview. Ask me questions one at a time.
 ```
 
-Lore Architect 会围绕以下内容持续提问：
+Lore Architect will ask about:
 
-- 情感核心
-- 类型与基调
-- 主题
-- 世界规则
-- 结局设计
-- 约束与边界
+- emotional core
+- genre and tone
+- themes
+- world rules
+- ending design
+- constraints and boundaries
 
-这一阶段会逐步填充：
+This stage gradually fills:
 
 - `story/vision.md`
 - `story/themes.md`
@@ -95,11 +93,11 @@ Lore Architect 会围绕以下内容持续提问：
 - `knowledge/rules.md`
 - `knowledge/glossary.md`
 
-你不需要一开始就知道所有答案。Lore Forge 的目标是通过访谈把隐含的故事知识挖出来。
+You do not need to know every answer up front. Lore Forge uses interviews to surface hidden story knowledge.
 
-## 5. 创建角色阵容
+## 5. Build The Cast
 
-使用 Character Therapist 创建具有心理一致性的角色：
+Use Character Therapist to create psychologically consistent characters:
 
 ```text
 Read agents/character-therapist/agent.md.
@@ -111,23 +109,23 @@ I want to create the protagonist. Their name is Luna.
 Start the character discovery interview.
 ```
 
-对于每个主要角色，Character Therapist 会定义：
+For each major character, Character Therapist defines:
 
-- 核心创伤
-- 欲望金字塔
-- 恐惧阶梯
-- 防御机制
-- 声音特征
-- 关系图谱
-- 成长弧线
+- core wound
+- desire pyramid
+- fear ladder
+- defense mechanism
+- voice signature
+- relationship map
+- growth arc
 
-输出写入 `characters/{name}.md`。
+Output is written to `characters/{name}.md`.
 
-然后继续让它补齐主角、反派、导师、盟友等核心角色。
+Then continue with antagonist, mentor, ally, and other core cast members.
 
-## 6. 构建时间线与记忆图谱
+## 6. Build Timeline And Memory Graph
 
-角色具备基本轮廓后，使用 Narrative Designer 处理时间和记忆：
+Once the cast is established, use Narrative Designer to handle chronology and memory:
 
 ```text
 Read agents/narrative-designer/agent.md.
@@ -138,24 +136,24 @@ Construct the world timeline and character timelines.
 Then build the memory graph.
 ```
 
-这一阶段会创建：
+This stage creates:
 
 - `story/timeline.md`
 - `memories/_index.md`
 - any per-character memory files needed by the project
 
-这里要区分两层：
+Important distinction:
 
-- **时间线** 是客观事实
-- **记忆图谱** 是主观回忆
+- the **timeline** is objective truth
+- the **memory graph** is subjective recall
 
-如果角色记错了某件事，这种“记忆偏差”应体现在记忆图谱，而不是直接改写客观时间线。
+If a character remembers something incorrectly, that should appear in the memory graph rather than rewriting the objective timeline.
 
-## 7. 规划章节与场景
+## 7. Plan Chapters And Scenes
 
-接下来把 Story Bible 转化为可执行的叙事结构。
+Next, transform the Story Bible into actionable narrative structure.
 
-先生成章节或路线大纲：
+First generate the chapter or route outline:
 
 ```text
 Read prompts/chapter_planning.md.
@@ -166,7 +164,7 @@ Plan the chapter structure. Define acts, chapter allocation, dependency graph,
 and the scene-by-scene outline.
 ```
 
-随后生成每个场景的定义：
+Then generate scene definitions:
 
 ```text
 Read prompts/generate_scene.md.
@@ -175,18 +173,18 @@ Act as Narrative Designer.
 For Chapter 01 of Moonlight, generate all scene definitions.
 ```
 
-一个标准场景定义至少包括：
+A standard scene definition should include:
 
-- 戏剧功能
-- 张力位置
-- POV 与出场角色
-- 地点与时间
-- 信息流
-- 伏笔埋设或回收
+- dramatic function
+- tension position
+- POV and active characters
+- location and time
+- information flow
+- foreshadowing placement or payoff
 
-## 8. 编写对白
+## 8. Write Dialogue
 
-场景定义完成后，把它交给 Dialogue Writer：
+Once a scene definition exists, hand it to Dialogue Writer:
 
 ```text
 Read agents/dialogue-writer/agent.md.
@@ -198,18 +196,18 @@ Read the related character files.
 Write the dialogue for this scene with subtext annotations.
 ```
 
-对白输出至少包含：
+Dialogue output should include:
 
-- 说话人标记
-- 每句的情绪状态
-- 潜台词说明
-- 关系张力注释
+- speaker tags
+- emotional state per line
+- subtext notes
+- relationship tension notes
 
-输出写入 `dialogue/`。
+Output is written into `dialogue/`.
 
-## 9. 进行一致性审查
+## 9. Run Consistency Review
 
-在任何内容被视为 canon 之前，都应运行 Lore Auditor：
+Before treating any content as canon, run Lore Auditor:
 
 ```text
 Read agents/lore-auditor/agent.md.
@@ -220,20 +218,20 @@ Run a full consistency audit on projects/moonlight/.
 Report all violations, warnings, and suggestions.
 ```
 
-Lore Auditor 重点检查：
+Lore Auditor focuses on:
 
-- 时间线冲突
-- 角色知识泄漏
-- 声音不一致
-- 世界规则违背
-- 未回收的伏笔
-- 不可达的结局
+- timeline conflicts
+- character knowledge leaks
+- voice inconsistency
+- world rule violations
+- unresolved foreshadowing
+- unreachable endings
 
-建议在开发中频繁做局部审计，在里程碑阶段做全量审计。
+Use targeted audits during active development and full audits at milestone points.
 
-## 10. 导出项目
+## 10. Export The Project
 
-当 Story Bible 稳定后，再导出为生产可用格式：
+Once the Story Bible is stable, export it into production-ready formats:
 
 ```text
 The Story Bible at projects/moonlight/ is complete and audited.
@@ -243,15 +241,15 @@ Export to:
 3. Screenplay format
 ```
 
-导出结果进入：
+Export output goes into:
 
 - `exports/json/`
 - `exports/godot/`
 - `exports/screenplay/`
 
-## 11. 持续迭代
+## 11. Iterate
 
-Lore Forge 不是一次性生成器。标准迭代循环如下：
+Lore Forge is not a one-shot generator. The standard loop is:
 
 ```text
 Interview -> Story Bible grows
@@ -262,25 +260,25 @@ Interview again or revise modules
 Repeat
 ```
 
-你可以在任何阶段返回重新访谈、重做角色、重构章节或重审对白。整个项目始终以 Story Bible 为单一事实来源。
+You can return to any phase at any time. The Story Bible remains the persistent source of truth for the whole project.
 
-## 推荐顺序
+## Recommended Order
 
-如果你想走最稳妥的流程，推荐顺序如下：
+If you want the most reliable path, use this order:
 
-1. 验证框架
-2. 创建项目
-3. 进行概念访谈
-4. 创建核心角色
-5. 构建时间线与记忆图谱
-6. 规划章节或路线
-7. 生成场景
-8. 编写对白
-9. 审计
-10. 导出
+1. Verify framework
+2. Create project
+3. Run concept interview
+4. Generate core cast
+5. Build timeline and memory graph
+6. Plan chapters or routes
+7. Generate scenes
+8. Write dialogue
+9. Audit
+10. Export
 
-## 下一步阅读
+## Read Next
 
-- [架构](/architecture)
-- [工作流](/workflow)
-- [项目结构](/project-structure)
+- [Architecture](/architecture)
+- [Workflow](/workflow)
+- [Project Structure](/project-structure)

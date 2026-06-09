@@ -1,21 +1,21 @@
 # Generate Character
 
-## 作用
+## Purpose
 
-`Generate Character` 是角色发现阶段的核心工作流。它把一个模糊的角色概念转化为心理完整、行为一致、声音鲜明的角色档案。
+`Generate Character` is the core workflow of character discovery. It transforms a vague character concept into a psychologically complete, behaviorally consistent, and vocally distinct character profile.
 
-## 触发条件
+## Trigger Conditions
 
-- `story/vision.md` 与 `story/themes.md` 已建立
-- 用户要求创建角色或设计阵容
-- `characters/_index.md` 中缺少必要角色位
-- 用户显式要求进入 Phase 2
+- `story/vision.md` and `story/themes.md` exist
+- the user wants to create a character or design the cast
+- `characters/_index.md` is missing a required role
+- the user explicitly asks to enter Phase 2
 
-## 负责 Agent
+## Responsible Agent
 
 Character Therapist
 
-## 依赖
+## Dependencies
 
 - `story/vision.md`
 - `story/themes.md`
@@ -24,57 +24,57 @@ Character Therapist
 - `knowledge/rules.md`
 - `characters/_index.md`
 
-## 工作流结构
+## Workflow Structure
 
-### Step 1：定义叙事角色
+### Step 1: Define Narrative Role
 
-1. 识别角色的叙事功能
-2. 明确其与故事核心问题的关系
-3. 把角色放进世界中的阵营与结构中
+1. identify the character's narrative role
+2. define the character's relation to the core question of the story
+3. place the character inside the world's faction or social structure
 
-### Step 2：建立心理画像
+### Step 2: Build Psychological Profile
 
-4. 核心创伤
-5. 欲望金字塔
-6. 恐惧阶梯
-7. 防御机制
-8. 自我欺骗
+4. core wound
+5. desire pyramid
+6. fear ladder
+7. defense mechanism
+8. self-deception
 
-### Step 3：建立行为签名
+### Step 3: Build Behavioral Signature
 
-9. 声音特征
-10. 肢体表现
-11. 决策方式
+9. voice signature
+10. body language
+11. decision pattern
 
-### Step 4：建立关系锚点
+### Step 4: Build Relationship Anchors
 
-12. 至少定义与两个角色的关系
-13. 写出权力结构、共同历史与未解张力
+12. define at least two key relationships
+13. record power dynamics, shared history, and unresolved tension
 
-### Step 5：建立成长弧
+### Step 5: Build Growth Arc
 
-14. 起始状态
-15. 终局状态
-16. 变化催化剂
-17. 抵抗变化的原因
+14. starting state
+15. ending state
+16. catalyst for change
+17. reason for resisting change
 
 ## Inputs
 
-- 用户给出的角色概念
+- user character concept
 - Knowledge Layer
-- 现有角色索引
+- current character index
 
 ## Outputs
 
 - `characters/{name}.md`
-- `characters/_index.md` 更新
-- `story/emotional_map.md` 更新
-- 必要时更新其他角色的关系图
+- updated `characters/_index.md`
+- updated `story/emotional_map.md`
+- relationship updates for other characters when needed
 
-## 校验规则
+## Validation Rules
 
-- 每个角色都必须有可追溯到创伤的行为动机
-- 每个角色都必须存在至少一个内部矛盾
-- 声音特征必须与现有角色区分开
-- 关系必须是双向定义
-- 角色掌握的信息不得超出时间线暴露范围
+- each character must have motivation traceable to a wound or need
+- each character must contain at least one internal contradiction
+- voice signatures must remain distinguishable from the existing cast
+- relationships must be defined in both directions
+- character knowledge may not exceed timeline exposure

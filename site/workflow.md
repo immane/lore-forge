@@ -1,9 +1,9 @@
-# 工作流
+# Workflow
 
-## Agent 生命周期（8 个阶段）
+## Agent Lifecycle (8 Phases)
 
-| 阶段 | 名称 | 负责 Agent |
-|------|------|-------------|
+| Phase | Name | Responsible Agent |
+|-------|------|-------------------|
 | 1 | Concept Discovery | Lore Architect |
 | 2 | Character Discovery | Character Therapist |
 | 3 | Timeline Construction | Narrative Designer |
@@ -13,117 +13,117 @@
 | 7 | Consistency Review | Lore Auditor |
 | 8 | Game Export | Export Layer |
 
-## 端到端流程
+## End-To-End Flow
 
 ```text
-框架验证
-  -> 创建项目
-  -> 概念探索
-  -> 角色发现
-  -> 时间线构建
-  -> 记忆图谱
-  -> 章节 / 路线规划
-  -> 场景设计
-  -> 对白创作
-  -> 一致性审查
-  -> 导出
+Framework verification
+  -> Create project
+  -> Concept discovery
+  -> Character discovery
+  -> Timeline construction
+  -> Memory graph
+  -> Chapter / route planning
+  -> Scene design
+  -> Dialogue creation
+  -> Consistency review
+  -> Export
 ```
 
-## 各阶段说明
+## Phase Details
 
-### Phase 1：概念探索
+### Phase 1: Concept Discovery
 
-- 负责 Agent：`Lore Architect`
-- 主要 Prompt：`Interview`
-- 目标：建立世界的情感核心、主题、规则与结局方向
-- 主要输出：
+- Responsible agent: `Lore Architect`
+- Primary prompt: `Interview`
+- Goal: establish emotional core, themes, world rules, and ending direction
+- Primary outputs:
   - `story/vision.md`
   - `story/themes.md`
   - `story/emotional_core.md`
   - `knowledge/canon.md`
   - `knowledge/rules.md`
 
-### Phase 2：角色发现
+### Phase 2: Character Discovery
 
-- 负责 Agent：`Character Therapist`
-- 主要 Prompt：`Generate Character`
-- 目标：建立有心理可信度、声音区分度和成长弧的角色
-- 主要输出：
+- Responsible agent: `Character Therapist`
+- Primary prompt: `Generate Character`
+- Goal: build psychologically credible characters with distinct voices and arcs
+- Primary outputs:
   - `characters/{name}.md`
   - `characters/_index.md`
   - `knowledge/emotional_map.md`
 
-### Phase 3：时间线构建
+### Phase 3: Timeline Construction
 
-- 负责 Agent：`Narrative Designer`
-- 目标：建立客观时间顺序，把世界事件和角色人生线组织起来
-- 主要输出：
+- Responsible agent: `Narrative Designer`
+- Goal: establish objective chronology for the world and cast
+- Primary outputs:
   - `story/timeline.md`
 
-### Phase 4：记忆图谱
+### Phase 4: Memory Graph
 
-- 负责 Agent：`Narrative Designer`
-- 目标：定义主观回忆、错误记忆、压抑记忆和触发链
-- 主要输出：
+- Responsible agent: `Narrative Designer`
+- Goal: define subjective recall, false memories, repressed memories, and trigger chains
+- Primary outputs:
   - `memories/_index.md`
-  - 各角色记忆文件
+  - per-character memory files
 
-### Phase 5：叙事设计
+### Phase 5: Narrative Design
 
-- 负责 Agent：`Narrative Designer`
-- 主要 Prompts：`Chapter Planning`、`Generate Scene`
-- 目标：把 Story Bible 结构化为幕、章、路线、分支和场景
-- 主要输出：
-  - `story/chapters/_outline.md` 或等价结构
-  - `story/` 下的场景定义文件
-  - `story/foreshadowing.md` 更新
+- Responsible agent: `Narrative Designer`
+- Primary prompts: `Chapter Planning`, `Generate Scene`
+- Goal: transform Story Bible into acts, chapters, routes, branches, and scenes
+- Primary outputs:
+  - `story/chapters/_outline.md` or equivalent
+  - scene definition files under `story/`
+  - `story/foreshadowing.md` updates
 
-### Phase 6：对白创作
+### Phase 6: Dialogue Creation
 
-- 负责 Agent：`Dialogue Writer`
-- 主要 Prompt：`Generate Dialogue`
-- 目标：写出符合心理设定、知识边界和整体语气的场景对白
-- 主要输出：
+- Responsible agent: `Dialogue Writer`
+- Primary prompt: `Generate Dialogue`
+- Goal: write scene dialogue that matches psychology, knowledge boundaries, and tone
+- Primary outputs:
   - `dialogue/{chapter}-{scene}.md`
 
-### Phase 7：一致性审查
+### Phase 7: Consistency Review
 
-- 负责 Agent：`Lore Auditor`
-- 主要 Prompt：`Review Consistency`
-- 目标：检测矛盾、漂移、信息泄漏和不可达的叙事状态
-- 主要输出：
+- Responsible agent: `Lore Auditor`
+- Primary prompt: `Review Consistency`
+- Goal: detect contradictions, drift, leaks, and unreachable narrative states
+- Primary outputs:
   - `_audit/{date}-{scope}-report.md`
 
-### Phase 8：游戏导出
+### Phase 8: Game Export
 
-- 负责层：Export Layer
-- 目标：把 Story Bible 转换成引擎可消费的结构化输出
-- 主要输出：
+- Responsible layer: Export Layer
+- Goal: transform Story Bible into engine-consumable outputs
+- Primary outputs:
   - `exports/json/`
   - `exports/godot/`
   - `exports/screenplay/`
 
-## 数据流
+## Data Flow
 
-Agents 通过 Story Bible 模块协作。每个 Agent 从上游读取信息，只写自己负责的边界，不能直接篡改其他 Agent 的产出。
+Agents collaborate through Story Bible modules. Each agent reads upstream information and writes only to its own responsibility boundary.
 
-## 工作模式
+## Working Model
 
-Lore Forge 的正常工作方式是一个迭代循环：
+Lore Forge is meant to run as an iterative loop:
 
-1. 访谈并发现缺失信息
-2. 写入或更新 Story Bible 模块
-3. 生成结构化叙事产物
-4. 运行一致性审查
-5. 修复缺口与矛盾
-6. 重复，直到 Story Bible 稳定
+1. interview and discover missing information
+2. write or update Story Bible modules
+3. generate structured narrative artifacts
+4. run consistency review
+5. fix gaps and contradictions
+6. repeat until the Story Bible is stable
 
-## 推荐理解方式
+## Suggested Reading Order
 
-如果你第一次接触 Lore Forge，建议按这个顺序阅读：
+If you are new to Lore Forge, read in this order:
 
-1. [开始使用](/getting-started)
-2. [架构](/architecture)
-3. [项目结构](/project-structure)
+1. [Getting Started](/getting-started)
+2. [Architecture](/architecture)
+3. [Project Structure](/project-structure)
 
-然后再看各个 Agent 和 Prompt 的页面，理解每个阶段的角色边界与输入输出。
+Then continue into the individual Agent and Prompt pages to understand responsibility boundaries and phase-specific inputs and outputs.

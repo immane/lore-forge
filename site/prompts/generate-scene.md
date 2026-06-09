@@ -1,21 +1,21 @@
 # Generate Scene
 
-## 作用
+## Purpose
 
-`Generate Scene` 负责把章节大纲转换为结构化场景定义，确保每一场戏都承担明确的叙事任务。
+`Generate Scene` converts chapter outlines into structured scene definitions, ensuring every scene carries a clear narrative function.
 
-## 触发条件
+## Trigger Conditions
 
-- 章节大纲已存在
-- 用户要求编写某一章或某一场的结构
-- Narrative Designer 发现某个叙事空缺
-- 用户显式要求进入 Phase 5
+- a chapter outline already exists
+- the user wants to design a chapter or scene structure
+- Narrative Designer detects a structural gap
+- the user explicitly asks to enter Phase 5
 
-## 负责 Agent
+## Responsible Agent
 
 Narrative Designer
 
-## 依赖
+## Dependencies
 
 - `story/chapters/_outline.md`
 - `story/themes.md`
@@ -23,63 +23,63 @@ Narrative Designer
 - `story/timeline.md`
 - `story/foreshadowing.md`
 - `story/ending_design.md`
-- 相关角色文件
+- relevant character files
 - `locations/`
 - `knowledge/`
 
-## 工作流结构
+## Workflow Structure
 
-### Step 1：确定场景存在理由
+### Step 1: Define Why The Scene Exists
 
-1. 戏剧功能是什么？
-2. 场景在张力曲线的哪个位置？
-3. 读者的情绪会如何变化？
+1. what is the scene's dramatic function?
+2. where does it sit on the tension curve?
+3. how should the audience's emotion shift?
 
-### Step 2：定义场景组成
+### Step 2: Define Scene Composition
 
-4. POV 角色是谁？
-5. 有哪些角色在场？他们各自要什么？
-6. 地点是什么？它如何影响氛围和行为可能性？
-7. 这一幕发生在时间线的什么位置？
+4. who is the POV character?
+5. which characters are present and what does each want?
+6. what is the location and how does it shape mood and possibility?
+7. where does the scene sit in the timeline?
 
-### Step 3：定义信息流
+### Step 3: Define Information Flow
 
-8. 读者会知道什么？
-9. 角色会知道什么？
-10. 戏剧性反讽在哪里？
-11. 有没有暂时无法被完全理解的隐藏层？
+8. what does the audience learn?
+9. what do the characters learn?
+10. where is dramatic irony present?
+11. what remains partially hidden?
 
-### Step 4：定义边界
+### Step 4: Define Boundaries
 
-12. 场景开始时的状态是什么？
-13. 场景结束时改变了什么？
-14. 有没有不可逆转的时刻？
+12. what is true at scene entry?
+13. what changes by scene exit?
+14. is there an irreversible moment?
 
-### Step 5：处理伏笔
+### Step 5: Handle Foreshadowing
 
-15. 检查是否需要埋伏笔或回收伏笔
-16. 如果埋伏笔，记录到寄存表
-17. 如果回收伏笔，确认其之前确实被种下过
+15. check if the scene must plant or pay off a seed
+16. if planting, register it
+17. if paying off, verify the original plant exists
 
 ## Inputs
 
-- 章节上下文
-- 相关角色文件
+- chapter context
+- related character files
 - Knowledge Layer
-- 伏笔寄存表
+- foreshadowing register
 
 ## Outputs
 
 - `story/chapters/{NN}-{title}.md`
-- `story/chapters/_outline.md` 更新
-- `story/foreshadowing.md` 更新
-- `story/timeline.md` 更新
-- `story/emotional_map.md` 更新
+- updated `story/chapters/_outline.md`
+- updated `story/foreshadowing.md`
+- updated `story/timeline.md`
+- updated `story/emotional_map.md`
 
-## 校验规则
+## Validation Rules
 
-- 每个场景必须有且只有一个主要戏剧功能
-- 场景开头必须逻辑承接上一场结尾
-- 角色获得的新信息必须和时间线一致
-- 如违反世界规则，应立即中止并交给审计
-- 没有戏剧功能的场景应被删除或合并
+- every scene must have exactly one primary dramatic function
+- scene entry must logically connect from previous scene exit
+- character knowledge changes must fit the timeline
+- if the scene breaks world rules, stop and escalate to audit
+- scenes with no dramatic function should be removed or merged
