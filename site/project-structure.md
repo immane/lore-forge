@@ -6,7 +6,8 @@ project-root/
 ├── agents/              # Agent definitions (5 agents)
 ├── prompts/             # Workflow templates (6 prompts)
 ├── templates/           # Project scaffolds (3 genres)
-├── docs/                # Framework documentation (this site)
+├── docs/                # Framework documentation content
+├── site/                # VitePress site container
 └── projects/            # User workspaces
     ├── active/          # Active projects
     ├── archived/        # Completed/paused projects

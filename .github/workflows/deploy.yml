@@ -29,7 +29,7 @@ jobs:
       - name: Init project (if needed)
         run: |
           if [ ! -f package.json ]; then
-            echo '{"name":"lore-forge-docs","private":true,"scripts":{"docs:dev":"vitepress dev docs","docs:build":"vitepress build docs","docs:preview":"vitepress preview docs"}}' > package.json
+            echo '{"name":"lore-forge-docs","private":true,"scripts":{"docs:dev":"vitepress dev site","docs:build":"vitepress build site","docs:preview":"vitepress preview site"}}' > package.json
             npm install -D vitepress
           fi
 
@@ -47,7 +47,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/.vitepress/dist
+          path: site/.vitepress/dist
 
   deploy:
     needs: build

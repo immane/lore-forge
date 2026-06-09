@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.zh-cn.md",
+                "file": "site/architecture.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README.zh-cn"
+              "title": "architecture"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.zh-cn.md",
+                "file": "site/architecture.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for README.zh-cn"
+              "title": "Backlinks for architecture"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.zh-cn.md",
+                "file": "site/architecture.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from README.zh-cn"
+              "title": "Outgoing links from architecture"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.zh-cn.md",
+                "file": "site/architecture.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of README.zh-cn"
+              "title": "Outline of architecture"
             }
           }
         ]
@@ -185,41 +185,41 @@
   },
   "active": "d78664a8a5986d90",
   "lastOpenFiles": [
-    "docs/getting-started.md",
-    "README.md",
-    "README.zh-cn.md",
-    "README.zh-hk.md",
-    "templates/narrative_rpg/dialogue/_index.md",
-    "templates/narrative_rpg/characters/_template.md",
-    "templates/narrative_rpg/characters/_index.md",
-    "docs/prompts/review-consistency.md",
-    "docs/prompts/chapter-planning.md",
-    "docs/prompts/generate-dialogue.md",
-    "docs/prompts/generate-scene.md",
-    "docs/prompts/generate-character.md",
-    "docs/prompts/interview.md",
-    "docs/agents/lore-auditor.md",
-    "docs/agents/dialogue-writer.md",
-    "docs/agents/narrative-designer.md",
-    "docs/agents/character-therapist.md",
-    "docs/agents/lore-architect.md",
-    "docs/project-structure.md",
+    "site/getting-started.md",
+    "site/index.md",
+    "site/project-structure.md",
+    "site/workflow.md",
+    "site/agents/character-therapist.md",
     "docs/workflow.md",
     "docs/architecture.md",
+    "docs/agents/character-therapist.md",
+    "docs/export_pipeline.md",
+    "docs/style_guide.md",
+    "docs/project_structure.md",
+    "site/prompts/review-consistency.md",
+    "site/prompts/interview.md",
+    "site/prompts/generate-scene.md",
+    "site/prompts/generate-dialogue.md",
+    "site/prompts/generate-character.md",
+    "site/prompts/chapter-planning.md",
+    "site/prompts",
+    "site/agents/narrative-designer.md",
+    "site/agents/lore-auditor.md",
+    "site/agents/lore-architect.md",
+    "site/agents/dialogue-writer.md",
+    "site/agents",
+    "site/architecture.md",
+    "docs/prompts/review-consistency.md",
+    "docs/prompts/interview.md",
+    "docs/prompts/generate-scene.md",
+    "docs/prompts/generate-dialogue.md",
+    "site/public",
+    "site",
+    "LICENSE",
     "docs/prompts",
     "docs/agents",
-    "docs/index.md",
     "docs/public",
-    "agents/narrative-designer/agent.md",
-    "templates/interactive_fiction/events/_index.md",
-    "templates/interactive_fiction/story/branches/_outline.md",
-    "templates/interactive_fiction/project.md",
     "projects/active",
-    "projects/templates",
-    "projects/archived",
-    "projects",
-    "docs",
-    "templates/visual_novel/story/routes",
-    "templates/visual_novel/exports/screenplay"
+    "projects/templates"
   ]
 }

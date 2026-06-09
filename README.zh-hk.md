@@ -29,7 +29,8 @@ lore-forge/
 ├── agents/            5 個職責邊界明確嘅 AI Agent
 ├── prompts/           6 個 Agent 調用工作流模板
 ├── templates/         3 種敘事體裁嘅項目 Scaffold
-├── docs/              框架文件（VitePress）
+├── docs/              框架文件內容
+├── site/              GitHub Pages 嘅 VitePress 站點容器
 └── projects/          用戶工作區（active / archived / templates）
 ```
 

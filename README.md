@@ -29,7 +29,8 @@ lore-forge/
 ├── agents/            5 specialized AI agents with defined boundaries
 ├── prompts/           6 workflow templates for agent invocation
 ├── templates/         3 genre project scaffolds
-├── docs/              Framework documentation (VitePress)
+├── docs/              Framework documentation content
+├── site/              VitePress site container for GitHub Pages
 └── projects/          User workspace (active / archived / templates)
 ```
 

@@ -71,6 +71,7 @@ agents/
 prompts/
 templates/
 docs/
+site/
 projects/
 
 ---
@@ -335,4 +336,3 @@ screenplay/
 不得直接开始写故事。
 
 应优先完善框架本身。
-
