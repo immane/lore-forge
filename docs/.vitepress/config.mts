@@ -8,11 +8,13 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'Getting Started', link: '/getting-started' },
     ],
     sidebar: [
       {
         text: 'Framework',
         items: [
+          { text: 'Getting Started', link: '/getting-started' },
           { text: 'Architecture', link: '/architecture' },
           { text: 'Workflow', link: '/workflow' },
           { text: 'Project Structure', link: '/project-structure' },
