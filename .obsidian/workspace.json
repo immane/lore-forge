@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "README.zh-cn.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "README.zh-cn"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "README.zh-cn.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for README"
+              "title": "Backlinks for README.zh-cn"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "README.zh-cn.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from README"
+              "title": "Outgoing links from README.zh-cn"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md",
+                "file": "README.zh-cn.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of README"
+              "title": "Outline of README.zh-cn"
             }
           }
         ]
@@ -185,6 +185,13 @@
   },
   "active": "d78664a8a5986d90",
   "lastOpenFiles": [
+    "docs/getting-started.md",
+    "README.md",
+    "README.zh-cn.md",
+    "README.zh-hk.md",
+    "templates/narrative_rpg/dialogue/_index.md",
+    "templates/narrative_rpg/characters/_template.md",
+    "templates/narrative_rpg/characters/_index.md",
     "docs/prompts/review-consistency.md",
     "docs/prompts/chapter-planning.md",
     "docs/prompts/generate-dialogue.md",
@@ -207,13 +214,6 @@
     "templates/interactive_fiction/events/_index.md",
     "templates/interactive_fiction/story/branches/_outline.md",
     "templates/interactive_fiction/project.md",
-    "templates/visual_novel/story/routes/_outline.md",
-    "templates/visual_novel/project.md",
-    "templates/interactive_fiction/exports/screenplay/_readme.md",
-    "templates/interactive_fiction/exports/json/_readme.md",
-    "templates/interactive_fiction/exports/godot/_readme.md",
-    "templates/interactive_fiction/knowledge/emotional_map.md",
-    "templates/interactive_fiction/knowledge/symbolism.md",
     "projects/active",
     "projects/templates",
     "projects/archived",
