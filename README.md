@@ -86,13 +86,19 @@ git clone https://github.com/immane/lore-forge.git
 cd lore-forge
 ```
 
+**Before you start:** ask your agent to set up the required MCPs automatically:
+
+```
+Read REQUIREMENT.md. Detect my platform and set up the minimum required MCP servers.
+```
+
+Then restart your platform. See [REQUIREMENT.md](./REQUIREMENT.md) for manual setup and per-platform details.
+
 If your assistant does not automatically load repository instructions, start with:
 
 ```
 Read AGENTS.md and verify that Lore Forge is ready to use.
 ```
-
-That is the only setup prompt most platforms need.
 
 ---
 

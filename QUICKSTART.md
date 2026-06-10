@@ -2,6 +2,22 @@
 
 Use this file when you want to start a Lore Forge project quickly without reading the full documentation first.
 
+## Before You Start
+
+Lore Forge needs **file read/write**, **cross-session memory**, and **content search**.
+
+The easiest way to set up: ask your agent to install everything for you:
+
+```text
+Read REQUIREMENT.md. Detect which platform you are running on.
+Set up the minimum required MCP servers for this platform.
+After setup, verify and report which capabilities are now available.
+```
+
+Then restart your platform. That's it.
+
+See [REQUIREMENT.md](./REQUIREMENT.md) for manual setup and per-platform details.
+
 ## 1. Open The Repository
 
 ```bash

@@ -11,6 +11,21 @@ You act as the **creative director**. The AI reads the framework instructions, s
 
 ## Setup
 
+### Check Requirements
+
+Lore Forge needs your AI platform to provide **file read/write**, **cross-session memory**, and **content search**.
+
+Ask your agent to set everything up automatically:
+
+```
+Read REQUIREMENT.md. Detect my platform and set up the minimum required MCP servers.
+Verify each tool is working and report which capabilities are now available.
+```
+
+Then restart your platform. See the [Requirements](/lore-forge/requirements) page for manual setup and per-platform details.
+
+### Open The Repository
+
 Clone the repository and open it in your AI assistant:
 
 ```bash
