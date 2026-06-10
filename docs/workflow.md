@@ -15,7 +15,7 @@ Define the lifecycle, data flow, and agent responsibilities of Lore Forge.
 | 5 | Narrative Design | Narrative Designer |
 | 6 | Dialogue Creation | Dialogue Writer |
 | 7 | Consistency Review | Lore Auditor |
-| 8 | Game Export | Export Layer |
+| 8 | Export | Export Layer |
 
 ## End-To-End Flow
 

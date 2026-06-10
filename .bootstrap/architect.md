@@ -272,7 +272,7 @@ Phase 7
 Consistency Review
 
 Phase 8
-Game Export
+Export
 
 For each phase, define:
 
@@ -291,6 +291,7 @@ Supports:
 
 godot/
 json/
+novel/
 screenplay/
 
 Can export from the Story Bible to:
@@ -298,6 +299,8 @@ Can export from the Story Bible to:
 * Dialogic
 * Yarn Spinner
 * JSON Event Graph
+* Prose Drafts
+* Manuscript Markdown
 * Cutscene Definitions
 
 ---

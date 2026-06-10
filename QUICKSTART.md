@@ -125,7 +125,7 @@ After the Story Bible passes audit:
 
 ```text
 The Story Bible at projects/active/moonlight/ is complete and audited.
-Export JSON Event Graph, Godot Dialogic timeline, and screenplay reference files.
+Export JSON Event Graph, Godot Dialogic timeline, novel manuscript Markdown, and screenplay reference files.
 ```
 
 Expected output locations:
@@ -133,7 +133,17 @@ Expected output locations:
 ```text
 projects/active/moonlight/exports/json/
 projects/active/moonlight/exports/godot/
+projects/active/moonlight/exports/novel/
 projects/active/moonlight/exports/screenplay/
+```
+
+For novel-only export:
+
+```text
+Export Moonlight as a novel manuscript.
+Use the approved Story Bible, scene plan, character profiles, dialogue, and audit results.
+Create an outline export, chapter prose drafts, and a continuous manuscript Markdown file.
+Do not invent new canon; mark missing information as TODOs.
 ```
 
 ## Useful Short Prompts

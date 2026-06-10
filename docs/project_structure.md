@@ -31,6 +31,10 @@ projects/active/my-story/
 ├── quests/ or events/
 ├── knowledge/
 └── exports/
+    ├── json/
+    ├── godot/
+    ├── novel/
+    └── screenplay/
 ```
 
 ## Notes

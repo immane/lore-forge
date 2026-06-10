@@ -95,6 +95,17 @@ Before canonizing or exporting substantial story content, check for:
 
 Report audit findings by severity with file references.
 
+## Export Targets
+
+Supported export targets include:
+
+- `exports/json/` for structured event graphs, character databases, dialogue, and scene data
+- `exports/godot/` for Dialogic timelines and Godot-compatible narrative resources
+- `exports/novel/` for outline exports, chapter prose drafts, scene prose, and manuscript Markdown
+- `exports/screenplay/` for Fountain screenplay, cutscene, and voice-over reference scripts
+
+Novel export must remain derived from the approved Story Bible, scene plan, character profiles, dialogue, and audit results. Do not invent unapproved canon while drafting prose.
+
 ## Build And Verification
 
 This repository is mostly Markdown and documentation. There may be no package manifest in a fresh checkout.

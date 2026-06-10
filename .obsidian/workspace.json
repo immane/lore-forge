@@ -183,8 +183,14 @@
       "bases:Create new base": false
     }
   },
-  "active": "d78664a8a5986d90",
+  "active": "c9c2cd1a79a5cb70",
   "lastOpenFiles": [
+    "templates/interactive_fiction/exports/novel/_readme.md",
+    "templates/interactive_fiction/exports/novel",
+    "templates/visual_novel/exports/novel/_readme.md",
+    "templates/visual_novel/exports/novel",
+    "templates/narrative_rpg/exports/novel/_readme.md",
+    "templates/narrative_rpg/exports/novel",
     "README.zh-CN.md",
     "QUICKSTART.zh-CN.md",
     "QUICKSTART.md",
@@ -212,14 +218,8 @@
     "site/prompts/chapter-planning.md",
     "site/agents/dialogue-writer.md",
     "site/agents/character-therapist.md",
-    "site/architecture.md",
-    "site/getting-started.md",
-    "site/index.md",
     "site/zh/prompts",
     "site/zh/agents",
-    "site/zh",
-    "site/prompts",
-    "site/agents",
-    "site/public"
+    "site/zh"
   ]
 }

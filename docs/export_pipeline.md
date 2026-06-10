@@ -2,12 +2,13 @@
 
 ## Purpose
 
-Describe how Lore Forge transforms Story Bible content into engine-ready outputs.
+Describe how Lore Forge transforms Story Bible content into engine-ready, manuscript-ready, or production-reference outputs.
 
 ## Supported Targets
 
 - `exports/godot/`
 - `exports/json/`
+- `exports/novel/`
 - `exports/screenplay/`
 
 ## Input Sources
@@ -42,12 +43,20 @@ The export pipeline reads from:
 - cutscene definitions
 - voice-over reference scripts
 
+### Novel
+
+- chapter-by-chapter prose drafts
+- scene prose compiled from approved scene definitions and dialogue
+- manuscript Markdown for revision, editing, or later conversion to DOCX/EPUB
+- optional outline-only export for authors who want structure without generated prose
+
 ## Export Rules
 
 - Export only audited Story Bible content
 - Canon data takes priority over generated derivatives
 - If modules conflict, export must stop until consistency issues are resolved
 - Export transforms structure; it does not invent missing canon
+- Novel export is a derived manuscript pass, not permission to invent unapproved plot, character motives, or world rules
 
 ## Recommended Flow
 

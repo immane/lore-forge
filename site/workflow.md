@@ -11,7 +11,7 @@
 | 5 | Narrative Design | Narrative Designer |
 | 6 | Dialogue Creation | Dialogue Writer |
 | 7 | Consistency Review | Lore Auditor |
-| 8 | Game Export | Export Layer |
+| 8 | Export | Export Layer |
 
 ## End-To-End Flow
 
@@ -94,13 +94,14 @@ Framework verification
 - Primary outputs:
   - `_audit/{date}-{scope}-report.md`
 
-### Phase 8: Game Export
+### Phase 8: Export
 
 - Responsible layer: Export Layer
-- Goal: transform Story Bible into engine-consumable outputs
+- Goal: transform Story Bible into engine-consumable or manuscript-ready outputs
 - Primary outputs:
   - `exports/json/`
   - `exports/godot/`
+  - `exports/novel/`
   - `exports/screenplay/`
 
 ## Data Flow

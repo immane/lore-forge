@@ -89,6 +89,11 @@ quests/
 knowledge/
 exports/
 
+exports/godot/
+exports/json/
+exports/novel/
+exports/screenplay/
+
 ---
 
 # Required Files

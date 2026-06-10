@@ -125,7 +125,7 @@ Story Bible 通过审计后：
 
 ```text
 projects/active/moonlight/ 下的 Story Bible 已完成并通过审计。
-导出 JSON Event Graph、Godot Dialogic 时间线和剧本参考文件。
+导出 JSON Event Graph、Godot Dialogic 时间线、小说手稿 Markdown 和剧本参考文件。
 ```
 
 预期输出位置：
@@ -133,7 +133,17 @@ projects/active/moonlight/ 下的 Story Bible 已完成并通过审计。
 ```text
 projects/active/moonlight/exports/json/
 projects/active/moonlight/exports/godot/
+projects/active/moonlight/exports/novel/
 projects/active/moonlight/exports/screenplay/
+```
+
+只导出小说时：
+
+```text
+将「月光」导出为小说手稿。
+使用已确认的 Story Bible、场景规划、角色档案、对话和审计结果。
+创建大纲导出、章节小说草稿，以及连续的手稿 Markdown 文件。
+不要发明新的正典；缺失信息请标记为 TODO。
 ```
 
 ## 实用快捷提示

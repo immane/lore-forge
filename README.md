@@ -159,7 +159,7 @@ Export:
 
 ```
 The Story Bible at projects/active/moonlight/ is complete and audited.
-Export JSON Event Graph, Godot Dialogic timeline, and screenplay reference files.
+Export JSON Event Graph, Godot Dialogic timeline, novel manuscript Markdown, and screenplay reference files.
 ```
 
 If you use OpenCode, `opencode.json` also defines shorthand commands for new project creation, project continuation, and audits.
@@ -168,7 +168,7 @@ If you use OpenCode, `opencode.json` also defines shorthand commands for new pro
 
 ### Full Workflow
 
-Below is the complete workflow from a blank folder to a game-ready export. You can invoke each step with natural language; the AI should use `AGENTS.md`, the files in `agents/`, and the matching prompt in `prompts/` automatically.
+Below is the complete workflow from a blank folder to a game-ready or manuscript-ready export. You can invoke each step with natural language; the AI should use `AGENTS.md`, the files in `agents/`, and the matching prompt in `prompts/` automatically.
 
 ---
 
@@ -378,22 +378,26 @@ Check her dialogue against her psychological profile.
 ```
 
 
-### Phase 8 — Game Export
+### Phase 8 — Export
 
-When the Story Bible passes audit, export to game-ready formats.
+When the Story Bible passes audit, export to game-ready or manuscript-ready formats.
 
 ```
 The Story Bible at projects/active/moonlight/ is complete and audited.
 Export to the following formats:
 1. JSON Event Graph (for Unity/Custom Engine)
 2. Godot Dialogic timeline
-3. Screenplay format (for reference/VO recording)
+3. Novel manuscript Markdown (for prose revision)
+4. Screenplay format (for reference/VO recording)
 ```
 
 Output:
 - `projects/active/moonlight/exports/json/` — structured JSON for game engines
 - `projects/active/moonlight/exports/godot/` — Dialogic-compatible timeline files
+- `projects/active/moonlight/exports/novel/` — outline exports, prose drafts, and manuscript Markdown
 - `projects/active/moonlight/exports/screenplay/` — Fountain-format screenplay
+
+Novel export is a derived prose pass. It should transform approved Story Bible, scene, character, and dialogue content into readable manuscript form without inventing new canon.
 
 
 ### Iteration Cycle
@@ -420,7 +424,7 @@ For large projects, run targeted audits during active development and full-proje
 ```
 Concept Discovery  →  Character Discovery  →  Timeline  →  Memory Graph
         ↓                                                         ↓
-  Game Export      ←  Consistency Review  ←  Dialogue  ←  Narrative Design
+  Export           ←  Consistency Review  ←  Dialogue  ←  Narrative Design
 ```
 
 All 8 phases are orchestrated through the prompts and agents defined in the framework. Each agent reads from upstream modules, writes to its own domain, and delegates cross-domain changes to the responsible agent.

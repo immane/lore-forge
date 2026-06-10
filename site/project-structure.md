@@ -38,7 +38,11 @@ projects/active/my-story/
 │   ├── rules.md
 │   ├── symbolism.md
 │   └── emotional_map.md
-├── exports/             # engine export outputs
+├── exports/             # engine and manuscript export outputs
+│   ├── json/
+│   ├── godot/
+│   ├── novel/
+│   └── screenplay/
 └── _audit/              # consistency audit reports
 ```
 

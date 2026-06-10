@@ -57,6 +57,10 @@ projects/moonlight/
 ├── quests/ or events/
 ├── knowledge/
 └── exports/
+    ├── json/
+    ├── godot/
+    ├── novel/
+    └── screenplay/
 ```
 
 This step creates structure first. It does not start by writing plot prose.
@@ -238,13 +242,15 @@ The Story Bible at projects/moonlight/ is complete and audited.
 Export to:
 1. JSON Event Graph
 2. Godot Dialogic timeline
-3. Screenplay format
+3. Novel manuscript Markdown
+4. Screenplay format
 ```
 
 Export output goes into:
 
 - `exports/json/`
 - `exports/godot/`
+- `exports/novel/`
 - `exports/screenplay/`
 
 ## 11. Iterate

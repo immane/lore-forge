@@ -59,6 +59,10 @@ projects/moonlight/
 ├── quests/ 或 events/
 ├── knowledge/
 └── exports/
+    ├── json/
+    ├── godot/
+    ├── novel/
+    └── screenplay/
 ```
 
 这一步不会直接写剧情，而是先建立项目骨架。
@@ -239,13 +243,15 @@ projects/moonlight/ 的 Story Bible 已完成并审计通过。
 导出为以下格式：
 1. JSON Event Graph
 2. Godot Dialogic 时间线
-3. 剧本格式
+3. 小说手稿 Markdown
+4. 剧本格式
 ```
 
 导出结果进入：
 
 - `exports/json/`
 - `exports/godot/`
+- `exports/novel/`
 - `exports/screenplay/`
 
 ## 11. 持续迭代

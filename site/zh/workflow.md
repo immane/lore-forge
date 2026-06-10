@@ -11,7 +11,7 @@
 | 5 | Narrative Design | Narrative Designer |
 | 6 | Dialogue Creation | Dialogue Writer |
 | 7 | Consistency Review | Lore Auditor |
-| 8 | Game Export | Export Layer |
+| 8 | 导出 | Export Layer |
 
 ## 端到端流程
 
@@ -94,13 +94,14 @@
 - 主要输出：
   - `_audit/{date}-{scope}-report.md`
 
-### Phase 8：游戏导出
+### Phase 8：导出
 
 - 负责层：Export Layer
-- 目标：把 Story Bible 转换成引擎可消费的结构化输出
+- 目标：把 Story Bible 转换成引擎可消费或手稿可修订的输出
 - 主要输出：
   - `exports/json/`
   - `exports/godot/`
+  - `exports/novel/`
   - `exports/screenplay/`
 
 ## 数据流
