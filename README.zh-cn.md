@@ -86,13 +86,19 @@ git clone https://github.com/immane/lore-forge.git
 cd lore-forge
 ```
 
+**开始之前：** 让 Agent 帮你一键安装所需 MCP：
+
+```
+读取 REQUIREMENT.zh-CN.md。检测当前平台并安装最低需要的 MCP 服务器。
+```
+
+然后重启平台即可。详见 [REQUIREMENT.zh-CN.md](./REQUIREMENT.zh-CN.md) 的手动安装和各平台详细说明。
+
 如果你的助手没有自动加载仓库指令，请从以下开始：
 
 ```
 读取 AGENTS.md 并确认 Lore Forge 已就绪可用。
 ```
-
-这是大多数平台需要的唯一设置提示。
 
 ---
 
