@@ -25,6 +25,8 @@ The **Story Bible is the single source of truth.** Everything else is derived fr
 
 ```
 lore-forge/
+├── AGENTS.md          Cross-platform AI agent instructions
+├── CLAUDE.md          Claude Code adapter; points to AGENTS.md
 ├── .bootstrap/        Framework self-construction tools
 ├── agents/            5 specialized AI agents with defined boundaries
 ├── prompts/           6 workflow templates for agent invocation
@@ -67,40 +69,39 @@ lore-forge/
 
 ## Usage Guide
 
-Lore Forge is designed to work with any AI coding assistant (Claude, ChatGPT, Cursor, etc.). The framework provides structured instructions that the AI reads and follows. You act as the creative director — the AI acts as your specialized writing room.
+Lore Forge is designed to work with AI coding and document agents such as Codex, Claude Code, OpenCode, Cursor, GitHub Copilot agents, Gemini CLI, and similar tools.
 
-Below is the complete workflow from a blank folder to a game-ready export.
+Start by opening this repository in your AI assistant. Most agent platforms will read `AGENTS.md` automatically or can be asked to read it once. Claude Code can use `CLAUDE.md`, which points back to `AGENTS.md`.
+
+You act as the creative director. The AI reads the framework instructions, selects the right Lore Forge agent, and follows the matching workflow.
 
 ---
 
-### Phase 0 — Framework Setup
+### Setup
 
-Clone the repository and open it in your AI assistant.
+Clone the repository and open it in your AI assistant:
 
 ```bash
 git clone https://github.com/immane/lore-forge.git
 cd lore-forge
 ```
 
-The first time you use Lore Forge, tell your AI assistant:
+If your assistant does not automatically load repository instructions, start with:
 
 ```
-Read .bootstrap/architect.md. You are now the Lore Forge Architect.
-Verify the framework structure is complete and ready for use.
+Read AGENTS.md and verify that Lore Forge is ready to use.
 ```
 
-The AI will check that all agents, prompts, and templates are in place.
+That is the only setup prompt most platforms need.
 
 ---
 
-### Phase 1 — Concept Discovery
+### Quick Start
 
-This is where the story begins. The Lore Architect agent interviews you to extract your world's foundation. You don't need to have everything figured out — the interview process discovers the story with you.
-
-Tell your AI assistant:
+Create a new project:
 
 ```
-Read .bootstrap/project_creator.md. I want to create a new project.
+Create a new Lore Forge project.
 
 Project Name: Moonlight
 Genre: Narrative RPG
@@ -110,18 +111,85 @@ Target Length: 6-8 hours
 Target Platform: PC
 ```
 
-The AI scaffolds your project at `projects/moonlight/` with the full Story Bible directory structure.
+The AI should scaffold the project under `projects/active/moonlight/`, then begin the concept discovery interview.
 
-Then begin the interview:
+Continue an existing project:
 
 ```
-Read .bootstrap/story_interviewer.md.
-Read prompts/interview.md.
-Act as Lore Architect.
-
-Analyze the current Story Bible at projects/moonlight/.
-Start the concept discovery interview. Ask me questions one at a time.
+Continue the Moonlight project.
+Find the highest-impact missing Story Bible information and ask me the next questions.
 ```
+
+Create a character:
+
+```
+For Moonlight, create the protagonist Luna.
+Use the Character Therapist workflow and start the character discovery interview.
+```
+
+Plan chapters or routes:
+
+```
+For Moonlight, plan the chapter structure from the current Story Bible.
+Define acts, chapter allocation, dependency graph, and scene-by-scene outline.
+```
+
+Write a scene:
+
+```
+For Moonlight, generate scene definitions for Chapter 01.
+Use the Narrative Designer workflow and preserve Story Bible canon.
+```
+
+Write dialogue:
+
+```
+For Moonlight, write dialogue for the Chapter 01 opening scene.
+Use established character profiles, voice signatures, subtext, and knowledge boundaries.
+```
+
+Run an audit:
+
+```
+Run a full Lore Forge consistency audit on projects/active/moonlight/.
+Report critical contradictions, warnings, and suggested fixes with file references.
+```
+
+Export:
+
+```
+The Story Bible at projects/active/moonlight/ is complete and audited.
+Export JSON Event Graph, Godot Dialogic timeline, and screenplay reference files.
+```
+
+If you use OpenCode, `opencode.json` also defines shorthand commands for new project creation, project continuation, and audits.
+
+---
+
+### Full Workflow
+
+Below is the complete workflow from a blank folder to a game-ready export. You can invoke each step with natural language; the AI should use `AGENTS.md`, the files in `agents/`, and the matching prompt in `prompts/` automatically.
+
+---
+
+### Phase 1 — Concept Discovery
+
+This is where the story begins. The Lore Architect agent interviews you to extract your world's foundation. You don't need to have everything figured out — the interview process discovers the story with you.
+
+Example request:
+
+```
+Create a new Lore Forge project and start the concept discovery interview.
+
+Project Name: Moonlight
+Genre: Narrative RPG
+Inspirations: To The Moon, Finding Paradise
+Themes: Regret, Forgiveness, Memory
+Target Length: 6-8 hours
+Target Platform: PC
+```
+
+The AI scaffolds your project at `projects/active/moonlight/` with the full Story Bible directory structure, then starts the interview.
 
 The Lore Architect will ask structured questions about:
 
@@ -133,13 +201,13 @@ The Lore Architect will ask structured questions about:
 - **Content Boundaries** — "Any topics, tones, or content types to avoid?"
 
 Answer each question. The AI writes your answers into:
-- `projects/moonlight/story/vision.md`
-- `projects/moonlight/story/themes.md`
-- `projects/moonlight/story/emotional_core.md`
-- `projects/moonlight/story/ending_design.md`
-- `projects/moonlight/knowledge/canon.md`
-- `projects/moonlight/knowledge/rules.md`
-- `projects/moonlight/knowledge/glossary.md`
+- `projects/active/moonlight/story/vision.md`
+- `projects/active/moonlight/story/themes.md`
+- `projects/active/moonlight/story/emotional_core.md`
+- `projects/active/moonlight/story/ending_design.md`
+- `projects/active/moonlight/knowledge/canon.md`
+- `projects/active/moonlight/knowledge/rules.md`
+- `projects/active/moonlight/knowledge/glossary.md`
 
 Expect 20–50 questions over multiple sessions. You can pause and resume at any time — the Story Bible is persistent.
 
@@ -149,13 +217,8 @@ Expect 20–50 questions over multiple sessions. You can pause and resume at any
 Once the world foundation is solid, the Character Therapist agent helps you discover your cast.
 
 ```
-Read agents/character-therapist/agent.md.
-Read prompts/generate_character.md.
-Act as Character Therapist.
-
-Read the Story Bible at projects/moonlight/.
-I want to create the protagonist. Their name is Luna.
-Start the character discovery interview.
+For Moonlight, create the protagonist Luna.
+Use the Character Therapist workflow and start the character discovery interview.
 ```
 
 The Character Therapist digs deep into each character's psychology:
@@ -168,7 +231,7 @@ The Character Therapist digs deep into each character's psychology:
 - **Voice Signature** — Speech patterns, vocabulary, verbal tics, silence patterns
 - **Growth Arc** — Who are they at the start vs. the end? What changes them?
 
-Output per character: `projects/moonlight/characters/luna.md`
+Output per character: `projects/active/moonlight/characters/luna.md`
 
 Repeat for each major character. The Character Therapist ensures:
 - Every character has internal contradictions (no perfect characters)
@@ -186,12 +249,8 @@ Also create Luna's mentor figure and her childhood friend.
 With characters defined, the Narrative Designer builds the world-level chronology.
 
 ```
-Read agents/narrative-designer/agent.md.
-Act as Narrative Designer.
-
-Read all files under projects/moonlight/story/ and projects/moonlight/characters/.
-Construct the world timeline and character timelines.
-Populate projects/moonlight/story/timeline.md.
+For Moonlight, construct the world timeline and character timelines.
+Populate the Story Bible timeline from the approved story and character files.
 ```
 
 The AI builds:
@@ -200,7 +259,7 @@ The AI builds:
 - **Character Timelines** — birth, formative events, story entry, story exit per character
 - **Convergence Points** — where character threads intersect
 
-Output: `projects/moonlight/story/timeline.md`
+Output: `projects/active/moonlight/story/timeline.md`
 
 
 ### Phase 4 — Memory Graph
@@ -208,15 +267,13 @@ Output: `projects/moonlight/story/timeline.md`
 The Narrative Designer maps subjective memories — what each character remembers, when they remember it, and whether those memories are reliable.
 
 ```
-Act as Narrative Designer.
-
-Read projects/moonlight/characters/ and projects/moonlight/story/timeline.md.
-Construct the memory graph. For each major character, trace their memory chains:
+For Moonlight, construct the memory graph.
+For each major character, trace their memory chains:
 what formative memories shape them, what triggers recall them, and are any memories
 repressed or false?
 ```
 
-Output: `projects/moonlight/memories/_index.md` and per-character memory files.
+Output: `projects/active/moonlight/memories/_index.md` and per-character memory files.
 
 The Memory Graph is distinct from the Timeline — the timeline is objective, memories are subjective. A character may remember events differently from how they actually happened. This gap between memory and truth creates dramatic tension.
 
@@ -226,12 +283,8 @@ The Memory Graph is distinct from the Timeline — the timeline is objective, me
 Now the raw materials exist. The Narrative Designer structures them into chapters and scenes.
 
 ```
-Read prompts/chapter_planning.md.
-Act as Narrative Designer.
-
-Read the full Story Bible at projects/moonlight/.
-Plan the chapter structure. Define acts, chapter allocation, dependency graph,
-and the scene-by-scene outline.
+For Moonlight, plan the chapter structure from the current Story Bible.
+Define acts, chapter allocation, dependency graph, and the scene-by-scene outline.
 ```
 
 The AI produces:
@@ -241,14 +294,11 @@ The AI produces:
 - **Dependency Graph** — which chapters must precede which, which run in parallel
 - **Chapter Details** — synopsis, POV character, emotional arc, required scenes per chapter
 
-Output: `projects/moonlight/story/chapters/_outline.md`
+Output: `projects/active/moonlight/story/chapters/_outline.md`
 
 Then generate individual scenes:
 
 ```
-Read prompts/generate_scene.md.
-Act as Narrative Designer.
-
 For Chapter 01 of Moonlight, generate all scene definitions.
 ```
 
@@ -260,7 +310,7 @@ Each scene includes:
 - Information flow (what reader learns, what characters learn, dramatic irony)
 - Foreshadowing integration (seeds to plant or pay off)
 
-Output: `projects/moonlight/story/chapters/01-*.md`
+Output: `projects/active/moonlight/story/chapters/01-*.md`
 
 
 ### Phase 6 — Dialogue Creation
@@ -268,13 +318,8 @@ Output: `projects/moonlight/story/chapters/01-*.md`
 Scenes are defined. Now the Dialogue Writer gives each character a voice.
 
 ```
-Read agents/dialogue-writer/agent.md.
-Read prompts/generate_dialogue.md.
-Act as Dialogue Writer.
-
-Read the scene at projects/moonlight/story/chapters/01-opening.md.
-Read characters luna.md and sol.md from projects/moonlight/characters/.
-Write the dialogue for this scene. Annotate each line with emotional state,
+For Moonlight, write the dialogue for Chapter 01 opening scene.
+Annotate each line with emotional state,
 subtext, and relationship tension notes.
 ```
 
@@ -290,7 +335,7 @@ The Dialogue Writer produces annotated dialogue:
 "Which night? There were a lot of nights."
 ```
 
-Output: `projects/moonlight/dialogue/01-opening.md`
+Output: `projects/active/moonlight/dialogue/01-opening.md`
 
 The Dialogue Writer enforces:
 - Every character sounds distinct (remove speaker tags — can you still tell who's talking?)
@@ -304,11 +349,7 @@ The Dialogue Writer enforces:
 Before anything is considered final, the Lore Auditor checks everything.
 
 ```
-Read agents/lore-auditor/agent.md.
-Read prompts/review_consistency.md.
-Act as Lore Auditor.
-
-Run a full consistency audit on projects/moonlight/.
+Run a full consistency audit on projects/active/moonlight/.
 Report all violations, warnings, and suggestions.
 ```
 
@@ -321,7 +362,7 @@ The Auditor cross-references every module:
 - **Foreshadowing** — every planted seed must have a payoff; every payoff must have a seed
 - **Ending Reachability** — are all intended endings still reachable?
 
-Output: `projects/moonlight/_audit/2026-06-10-full-report.md`
+Output: `projects/active/moonlight/_audit/YYYY-MM-DD-full-report.md`
 
 Findings are classified:
 - **Critical** — hard contradiction, must fix before canonization
@@ -332,7 +373,7 @@ Findings are classified:
 Targeted audits (single character, single chapter) can be run at any time:
 
 ```
-Act as Lore Auditor. Run a targeted audit on the character Luna.
+For Moonlight, run a targeted audit on the character Luna.
 Check her dialogue against her psychological profile.
 ```
 
@@ -342,7 +383,7 @@ Check her dialogue against her psychological profile.
 When the Story Bible passes audit, export to game-ready formats.
 
 ```
-The Story Bible at projects/moonlight/ is complete and audited.
+The Story Bible at projects/active/moonlight/ is complete and audited.
 Export to the following formats:
 1. JSON Event Graph (for Unity/Custom Engine)
 2. Godot Dialogic timeline
@@ -350,9 +391,9 @@ Export to the following formats:
 ```
 
 Output:
-- `projects/moonlight/exports/json/` — structured JSON for game engines
-- `projects/moonlight/exports/godot/` — Dialogic-compatible timeline files
-- `projects/moonlight/exports/screenplay/` — Fountain-format screenplay
+- `projects/active/moonlight/exports/json/` — structured JSON for game engines
+- `projects/active/moonlight/exports/godot/` — Dialogic-compatible timeline files
+- `projects/active/moonlight/exports/screenplay/` — Fountain-format screenplay
 
 
 ### Iteration Cycle

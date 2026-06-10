@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "agents/character-therapist/agent.md",
+                "file": "QUICKSTART.zh-CN.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "agent"
+              "title": "QUICKSTART.zh-CN"
             }
           }
         ]
@@ -185,13 +185,21 @@
   },
   "active": "d78664a8a5986d90",
   "lastOpenFiles": [
+    "README.zh-CN.md",
+    "QUICKSTART.zh-CN.md",
+    "QUICKSTART.md",
+    "README.zh-cn.md",
+    "README.md",
+    "README.zh-hk.md",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "agents/character-therapist/agent.md",
     "opencode.json",
     "opencode.json.removed",
     "agents/narrative-designer/agent.md",
     "agents/lore-auditor/agent.md",
     "agents/lore-architect/agent.md",
     "agents/dialogue-writer/agent.md",
-    "agents/character-therapist/agent.md",
     "site/zh/getting-started.md",
     "templates/interactive_fiction/quests/_index.md",
     "templates/visual_novel/quests/_index.md",
@@ -207,19 +215,11 @@
     "site/architecture.md",
     "site/getting-started.md",
     "site/index.md",
-    "site/project-structure.md",
-    "site/workflow.md",
-    "site/zh/prompts/review-consistency.md",
-    "site/zh/prompts/interview.md",
-    "site/zh/prompts/generate-scene.md",
-    "site/zh/prompts/generate-dialogue.md",
-    "site/zh/prompts/generate-character.md",
     "site/zh/prompts",
     "site/zh/agents",
     "site/zh",
     "site/prompts",
     "site/agents",
-    "site/public",
-    "site"
+    "site/public"
   ]
 }
