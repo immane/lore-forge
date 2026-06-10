@@ -186,6 +186,7 @@
   "active": "d78664a8a5986d90",
   "lastOpenFiles": [
     "opencode.json",
+    "opencode.json.removed",
     "agents/narrative-designer/agent.md",
     "agents/lore-auditor/agent.md",
     "agents/lore-architect/agent.md",
@@ -219,7 +220,6 @@
     "site/prompts",
     "site/agents",
     "site/public",
-    "site",
-    "LICENSE"
+    "site"
   ]
 }

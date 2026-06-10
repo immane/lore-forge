@@ -9,15 +9,15 @@
   "command": {
     "new-project": {
       "description": "Create a new Lore Forge project skeleton and first interview queue.",
-      "prompt": "Create a new Lore Forge project. Use the project-creator agent workflow. Ask for missing required inputs first if the project name, genre, theme, platform, or target length are absent. Create the project under projects/active/<project-name>/ and generate interview_next.md."
+      "template": "Create a new Lore Forge project. Use the project-creator agent workflow. Ask for missing required inputs first if the project name, genre, theme, platform, or target length are absent. Create the project under projects/active/<project-name>/ and generate interview_next.md."
     },
     "continue-project": {
       "description": "Continue developing an existing Lore Forge project through interview and Story Bible updates.",
-      "prompt": "Continue an existing Lore Forge project. Identify the active project if not specified, read its project.md and Story Bible files, then use the story-interviewer workflow to find the highest-impact missing information. Ask no more than three questions."
+      "template": "Continue an existing Lore Forge project. Identify the active project if not specified, read its project.md and Story Bible files, then use the story-interviewer workflow to find the highest-impact missing information. Ask no more than three questions."
     },
     "audit": {
       "description": "Run a Lore Forge consistency review on a project or artifact.",
-      "prompt": "Audit the requested Lore Forge project or artifact. Use the lore-auditor workflow. Prioritize contradictions, timeline breaks, character knowledge leaks, terminology drift, and unresolved canon conflicts. Report findings by severity with file references."
+      "template": "Audit the requested Lore Forge project or artifact. Use the lore-auditor workflow. Prioritize contradictions, timeline breaks, character knowledge leaks, terminology drift, and unresolved canon conflicts. Report findings by severity with file references."
     }
   }
 }
