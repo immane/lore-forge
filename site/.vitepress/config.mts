@@ -2,6 +2,12 @@ import { defineConfig } from 'vitepress'
 
 const englishSidebar = [
   {
+    text: 'About',
+    items: [
+      { text: 'About Lore Forge', link: '/about' },
+    ],
+  },
+  {
     text: 'Projects',
     items: [
       { text: 'Browse Projects', link: '/projects' },
@@ -10,6 +16,12 @@ const englishSidebar = [
 ]
 
 const chineseSidebar = [
+  {
+    text: '关于',
+    items: [
+      { text: '关于 Lore Forge', link: '/zh/about' },
+    ],
+  },
   {
     text: '项目',
     items: [
@@ -33,6 +45,7 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: 'Home', link: '/' },
+          { text: 'About', link: '/about' },
           { text: 'Projects', link: '/projects' },
         ],
         sidebar: englishSidebar,
@@ -47,6 +60,7 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: '首页', link: '/zh/' },
+          { text: '关于', link: '/zh/about' },
           { text: '项目', link: '/zh/projects' },
         ],
         sidebar: chineseSidebar,
