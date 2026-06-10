@@ -3,67 +3,36 @@ layout: home
 
 hero:
   name: Lore Forge
-  text: AI-Assisted Narrative Design Framework
-  tagline: Build and maintain a living Story Bible through structured interviews, knowledge management, character design, narrative planning, and consistency review.
+  text: Story Bible Reader
+  tagline: Browse and read story worlds built with the Lore Forge narrative design framework.
   actions:
     - theme: brand
-      text: Get Started
-      link: /getting-started
+      text: Browse Projects
+      link: /projects
     - theme: alt
-      text: Chinese
+      text: 中文
       link: /zh/
 
 features:
-  - icon: 🧠
-    title: Knowledge Engineering
-    details: Lore Forge treats story creation as knowledge engineering instead of one-shot text generation. World facts should remain traceable, updateable, and auditable.
-  - icon: 🤖
-    title: Multi-Agent Collaboration
-    details: Five specialized agents divide responsibility across worldbuilding, character psychology, narrative design, dialogue writing, and consistency review.
-  - icon: 🔄
-    title: Full Lifecycle
-    details: Covers the full workflow from concept discovery and character design to export-ready game data.
-  - icon: 📋
-    title: Three Templates
-    details: Includes ready-to-use templates for Narrative RPG, Visual Novel, and Interactive Fiction projects.
+  - icon: 📖
+    title: Read Story Bibles
+    details: Explore complete story worlds with character profiles, world rules, timelines, locations, and emotional arcs.
+  - icon: 📝
+    title: Read Exported Novels
+    details: Enjoy narrative prose exported from the Story Bible, including chapter drafts and manuscript content.
+  - icon: 🗺️
+    title: Explore World Maps
+    details: Discover locations, knowledge systems, and the rules that govern each unique story universe.
 ---
 
-## What Lore Forge Is
+## What Is This?
 
-Lore Forge is a **Story Bible Engine**.
+This is a public reader for story projects built with [Lore Forge](https://github.com/immane/lore-forge), an AI-assisted narrative design framework.
 
-Its goal is not to instantly generate a story. Its goal is to help creators organize worldbuilding, character arcs, timeline logic, memory structures, chapter plans, dialogue, and export assets into a maintainable long-term knowledge system.
+Each project here is a **Story Bible** — a living document containing worldbuilding, character designs, memory graphs, narrative plans, and export-ready prose.
 
-In Lore Forge, the process is not:
+## How It Works
 
-```text
-Idea -> Generate Story
-```
-
-It is:
-
-```text
-Idea -> Interview -> Story Bible -> Character Design -> Timeline -> Memory Graph -> Narrative Design -> Dialogue -> Export
-```
-
-## Suitable For
-
-- Narrative RPG
-- Visual Novel
-- Interactive Fiction
-- Story-Driven Games
-- Tabletop Campaigns
-
-## Core Principles
-
-- Long-term maintainability over one-shot output
-- Consistency over short-term creativity spikes
-- Story Bible as the single source of truth
-- All outputs should be readable, updateable, checkable, and extensible by AI
-
-## Suggested Reading Order
-
-1. [Getting Started](/getting-started)
-2. [Architecture](/architecture)
-3. [Workflow](/workflow)
-4. [Project Structure](/project-structure)
+- **Browse** the project list to find a story
+- **Read** through the Story Bible to understand the world and characters
+- **Follow** the narrative from outline to finished chapters

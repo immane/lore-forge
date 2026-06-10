@@ -3,67 +3,36 @@ layout: home
 
 hero:
   name: Lore Forge
-  text: AI 辅助叙事设计框架
-  tagline: 通过结构化访谈、知识管理、角色设计、剧情规划与一致性审查，长期维护一套可持续演化的 Story Bible。
+  text: 故事圣经阅读器
+  tagline: 浏览并阅读用 Lore Forge 叙事设计框架构建的故事世界。
   actions:
     - theme: brand
-      text: 开始使用
-      link: /zh/getting-started
+      text: 浏览项目
+      link: /zh/projects
     - theme: alt
-      text: 查看 GitHub
-      link: https://github.com/immane/lore-forge
+      text: English
+      link: /
 
 features:
-  - icon: 🧠
-    title: 知识工程而非一键生成
-    details: Lore Forge 把故事创作视为知识建模过程，而不是临时生成文本。每条设定都应可追溯、可更新、可检查。
-  - icon: 🤖
-    title: 多 Agent 协作
-    details: 由 5 个职责边界清晰的 Agent 分工协作，分别负责世界观、角色、叙事、对白和一致性审计。
-  - icon: 🔄
-    title: 完整生命周期
-    details: 覆盖从概念探索、角色发现、时间线构建、记忆图谱，到叙事设计、对白创作、一致性审查和导出的完整流程。
-  - icon: 📋
-    title: 三种模板
-    details: 内置 Narrative RPG、Visual Novel、Interactive Fiction 三类项目模板，目录结构和导出目标均已预设。
+  - icon: 📖
+    title: 阅读故事圣经
+    details: 探索完整的故事世界，包含角色档案、世界规则、时间线、地点和情感弧线。
+  - icon: 📝
+    title: 阅读导出小说
+    details: 欣赏从故事圣经中导出的叙事散文，包括章节草稿和手稿内容。
+  - icon: 🗺️
+    title: 探索世界地图
+    details: 发现地点、知识体系以及每个独特故事宇宙的规则。
 ---
 
-## 什么是 Lore Forge
+## 这是什么？
 
-Lore Forge 是一个 **Story Bible Engine**。
+这是用 [Lore Forge](https://github.com/immane/lore-forge)（AI 辅助叙事设计框架）构建的故事项目的公共阅读器。
 
-它的核心目标不是“替你写故事”，而是帮助你把一个长期项目中的世界观、角色关系、时间线、记忆结构、章节规划、对白和导出资产组织成一套能持续维护的知识系统。
+这里的每个项目都是一部完整的**故事圣经**——包含世界观构建、角色设计、记忆图谱、叙事计划和可导出的散文。
 
-在 Lore Forge 中，故事生产流程不是：
+## 如何使用
 
-```text
-想法 -> 生成故事
-```
-
-而是：
-
-```text
-想法 -> 访谈 -> Story Bible -> 角色设计 -> 时间线 -> 记忆图谱 -> 叙事设计 -> 对白 -> 导出
-```
-
-## 适用场景
-
-- 叙事 RPG
-- 视觉小说
-- 互动小说
-- 剧情驱动游戏
-- 桌面战役设定
-
-## 核心原则
-
-- 长期维护优先于一次性产出
-- 一致性优先于短期创意爆发
-- Story Bible 是单一事实来源
-- 所有产出都应能被 AI 读取、更新、检查和扩展
-
-## 推荐阅读顺序
-
-1. [开始使用](/zh/getting-started)
-2. [架构](/zh/architecture)
-3. [工作流](/zh/workflow)
-4. [项目结构](/zh/project-structure)
+- **浏览**项目列表，找到感兴趣的故事
+- **阅读**故事圣经，了解世界和角色
+- **跟随**叙事，从大纲到完整的章节

@@ -2,66 +2,18 @@ import { defineConfig } from 'vitepress'
 
 const englishSidebar = [
   {
-    text: 'Framework',
+    text: 'Projects',
     items: [
-      { text: 'Getting Started', link: '/getting-started' },
-      { text: 'Architecture', link: '/architecture' },
-      { text: 'Workflow', link: '/workflow' },
-      { text: 'Project Structure', link: '/project-structure' },
-    ],
-  },
-  {
-    text: 'Agents',
-    items: [
-      { text: 'Lore Architect', link: '/agents/lore-architect' },
-      { text: 'Character Therapist', link: '/agents/character-therapist' },
-      { text: 'Narrative Designer', link: '/agents/narrative-designer' },
-      { text: 'Dialogue Writer', link: '/agents/dialogue-writer' },
-      { text: 'Lore Auditor', link: '/agents/lore-auditor' },
-    ],
-  },
-  {
-    text: 'Prompts',
-    items: [
-      { text: 'Interview', link: '/prompts/interview' },
-      { text: 'Generate Character', link: '/prompts/generate-character' },
-      { text: 'Generate Scene', link: '/prompts/generate-scene' },
-      { text: 'Generate Dialogue', link: '/prompts/generate-dialogue' },
-      { text: 'Chapter Planning', link: '/prompts/chapter-planning' },
-      { text: 'Review Consistency', link: '/prompts/review-consistency' },
+      { text: 'Browse Projects', link: '/projects' },
     ],
   },
 ]
 
 const chineseSidebar = [
   {
-    text: '框架',
+    text: '项目',
     items: [
-      { text: '开始使用', link: '/zh/getting-started' },
-      { text: '架构', link: '/zh/architecture' },
-      { text: '工作流', link: '/zh/workflow' },
-      { text: '项目结构', link: '/zh/project-structure' },
-    ],
-  },
-  {
-    text: 'Agents',
-    items: [
-      { text: 'Lore Architect', link: '/zh/agents/lore-architect' },
-      { text: 'Character Therapist', link: '/zh/agents/character-therapist' },
-      { text: 'Narrative Designer', link: '/zh/agents/narrative-designer' },
-      { text: 'Dialogue Writer', link: '/zh/agents/dialogue-writer' },
-      { text: 'Lore Auditor', link: '/zh/agents/lore-auditor' },
-    ],
-  },
-  {
-    text: 'Prompts',
-    items: [
-      { text: 'Interview', link: '/zh/prompts/interview' },
-      { text: 'Generate Character', link: '/zh/prompts/generate-character' },
-      { text: 'Generate Scene', link: '/zh/prompts/generate-scene' },
-      { text: 'Generate Dialogue', link: '/zh/prompts/generate-dialogue' },
-      { text: 'Chapter Planning', link: '/zh/prompts/chapter-planning' },
-      { text: 'Review Consistency', link: '/zh/prompts/review-consistency' },
+      { text: '浏览项目', link: '/zh/projects' },
     ],
   },
 ]
@@ -77,11 +29,11 @@ export default defineConfig({
       label: 'English',
       lang: 'en-US',
       title: 'Lore Forge',
-      description: 'AI-assisted narrative design framework',
+      description: 'Story Bible Reader — Browse and read narrative worlds',
       themeConfig: {
         nav: [
           { text: 'Home', link: '/' },
-          { text: 'Getting Started', link: '/getting-started' },
+          { text: 'Projects', link: '/projects' },
         ],
         sidebar: englishSidebar,
       },
@@ -90,12 +42,12 @@ export default defineConfig({
       label: '简体中文',
       lang: 'zh-CN',
       title: 'Lore Forge',
-      description: 'AI 辅助叙事设计框架',
+      description: '故事圣经阅读器 — 浏览并阅读叙事世界',
       link: '/zh/',
       themeConfig: {
         nav: [
           { text: '首页', link: '/zh/' },
-          { text: '开始使用', link: '/zh/getting-started' },
+          { text: '项目', link: '/zh/projects' },
         ],
         sidebar: chineseSidebar,
       },

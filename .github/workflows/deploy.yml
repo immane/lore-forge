@@ -30,7 +30,7 @@ jobs:
         run: |
           if [ ! -f package.json ]; then
             echo '{"name":"lore-forge-docs","private":true,"scripts":{"docs:dev":"vitepress dev site","docs:build":"vitepress build site","docs:preview":"vitepress preview site"}}' > package.json
-            npm install -D vitepress
+            npm install -D vitepress markdown-it
           fi
 
       - name: Install dependencies
