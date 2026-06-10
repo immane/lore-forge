@@ -5,6 +5,7 @@ const englishSidebar = [
     text: 'About',
     items: [
       { text: 'About Lore Forge', link: '/about' },
+      { text: 'User Guide', link: '/guide' },
     ],
   },
   {
@@ -20,6 +21,7 @@ const chineseSidebar = [
     text: '关于',
     items: [
       { text: '关于 Lore Forge', link: '/zh/about' },
+      { text: '使用指南', link: '/zh/guide' },
     ],
   },
   {
@@ -45,6 +47,7 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: 'Home', link: '/' },
+          { text: 'Guide', link: '/guide' },
           { text: 'About', link: '/about' },
           { text: 'Projects', link: '/projects' },
         ],
@@ -60,6 +63,7 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: '首页', link: '/zh/' },
+          { text: '指南', link: '/zh/guide' },
           { text: '关于', link: '/zh/about' },
           { text: '项目', link: '/zh/projects' },
         ],
