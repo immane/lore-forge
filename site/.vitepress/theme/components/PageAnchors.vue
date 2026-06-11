@@ -24,7 +24,20 @@ const anchors = ref([])
 let timer = null
 
 function extract() {
-  const headings = document.querySelectorAll('.vp-doc h2[id], .vp-doc h3[id]')
+  let headings = document.querySelectorAll('.vp-doc h2[id], .vp-doc h3[id]')
+  if (headings.length === 0) {
+    headings = document.querySelectorAll('.VPDoc h2[id], .VPDoc h3[id]')
+  }
+  if (headings.length === 0) {
+    const all = document.querySelectorAll('h2[id], h3[id]')
+    const nav = document.querySelector('.VPNav')
+    const side = document.querySelector('.VPSidebar')
+    headings = Array.from(all).filter(h => {
+      if (nav?.contains(h)) return false
+      if (side?.contains(h)) return false
+      return true
+    })
+  }
   anchors.value = Array.from(headings)
     .map(h => ({
       id: h.id,
@@ -35,19 +48,22 @@ function extract() {
 }
 
 async function collect(retries = 0) {
-  anchors.value = []
   clearTimeout(timer)
   await nextTick()
   timer = setTimeout(() => {
     extract()
-    if (anchors.value.length === 0 && retries < 8) {
+    if (anchors.value.length === 0 && retries < 6) {
       collect(retries + 1)
     }
-  }, 200 + retries * 250)
+  }, retries === 0 ? 200 : 300 + retries * 300)
 }
 
 onMounted(() => collect(0))
-onUnmounted(() => clearTimeout(timer))
+
+onUnmounted(() => {
+  clearTimeout(timer)
+  anchors.value = []
+})
 
 watch(() => route.path, () => {
   anchors.value = []
