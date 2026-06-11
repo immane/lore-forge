@@ -23,26 +23,36 @@ const isZh = computed(() => lang?.value === 'zh-CN')
 const anchors = ref([])
 let timer = null
 
-async function collect() {
-  anchors.value = []
-  await nextTick()
-  clearTimeout(timer)
-  timer = setTimeout(() => {
-    const headings = document.querySelectorAll('.vp-doc h2[id], .vp-doc h3[id]')
-    anchors.value = Array.from(headings)
-      .map(h => ({
-        id: h.id,
-        text: h.textContent?.replace(/\s*#\s*$/, '').trim() || '',
-        level: h.tagName.toLowerCase(),
-      }))
-      .filter(a => a.id && a.text)
-  }, 400)
+function extract() {
+  const headings = document.querySelectorAll('.vp-doc h2[id], .vp-doc h3[id]')
+  anchors.value = Array.from(headings)
+    .map(h => ({
+      id: h.id,
+      text: h.textContent?.replace(/\s*#\s*$/, '').trim() || '',
+      level: h.tagName.toLowerCase(),
+    }))
+    .filter(a => a.id && a.text)
 }
 
-onMounted(collect)
+async function collect(retries = 0) {
+  anchors.value = []
+  clearTimeout(timer)
+  await nextTick()
+  timer = setTimeout(() => {
+    extract()
+    if (anchors.value.length === 0 && retries < 8) {
+      collect(retries + 1)
+    }
+  }, 200 + retries * 250)
+}
+
+onMounted(() => collect(0))
 onUnmounted(() => clearTimeout(timer))
 
-watch(() => route.path, collect)
+watch(() => route.path, () => {
+  anchors.value = []
+  collect(0)
+})
 </script>
 
 <style scoped>
