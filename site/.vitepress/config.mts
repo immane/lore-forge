@@ -91,7 +91,7 @@ const enProjectSidebars: Record<string, any> = {}
 const zhProjectSidebars: Record<string, any> = {}
 for (const slug of slugs) {
   enProjectSidebars['/project/' + slug] = projectSidebarEn(slug)
-  zhProjectSidebars['/project/' + slug] = projectSidebarZh(slug)
+  zhProjectSidebars['/zh/project/' + slug] = projectSidebarZh(slug)
 }
 
 export default defineConfig({
@@ -136,7 +136,7 @@ export default defineConfig({
         ],
         sidebar: {
           ...zhProjectSidebars,
-          '/': chineseSidebar,
+          '/zh/': chineseSidebar,
         },
       },
     },
