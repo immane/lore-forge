@@ -11,114 +11,44 @@ const { params } = useData()
 const name = computed(() => params?.value?.name)
 const project = computed(() => name.value ? projects.find(p => p.slug === name.value) : undefined)
 
-function formatName(n) {
-  return n.replace(/_/g, ' ').replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
-}
+const sections = [
+  { key: 'story', label: 'Story', path: 'story', count: p => p.story.length },
+  { key: 'characters', label: 'Characters', path: 'characters', count: p => p.characters.length },
+  { key: 'locations', label: 'Locations', path: 'locations', count: p => p.locations.length },
+  { key: 'knowledge', label: 'Knowledge', path: 'knowledge', count: p => p.knowledge.length },
+  { key: 'dialogue', label: 'Dialogue', path: 'dialogue', count: p => p.dialogue.length },
+  { key: 'quests', label: 'Quests', path: 'quests', count: p => p.quests.length },
+  { key: 'events', label: 'Events', path: 'events', count: p => p.events.length },
+  { key: 'memories', label: 'Memories', path: 'memories', count: p => p.memories.length },
+  { key: 'novel', label: 'Novel', path: 'novel', count: p => p.exports.novel.length },
+  { key: 'screenplay', label: 'Screenplay', path: 'screenplay', count: p => p.exports.screenplay.length },
+  { key: 'godot', label: 'Godot Export', path: 'godot', count: p => p.exports.godot.length },
+  { key: 'json', label: 'JSON Export', path: 'json', count: p => p.exports.json.length },
+]
 </script>
 
 <div v-if="project">
 
 # {{ project.name }}
 
-<section v-if="project.project" class="content-section">
+<section v-if="project.project" class="overview">
   <ProjectContent :html="project.project.html" />
 </section>
 
-<section v-if="project.story.length" class="content-section">
-  <h2>Story</h2>
-  <div v-for="file in project.story" :key="file.name" class="file-block">
-    <h3>{{ formatName(file.name) }}</h3>
-    <ProjectContent :html="file.html" />
-  </div>
-</section>
+<h2>Sections</h2>
 
-<section v-if="project.characters.length" class="content-section">
-  <h2>Characters</h2>
-  <div v-for="file in project.characters" :key="file.name" class="file-block">
-    <h3>{{ formatName(file.name) }}</h3>
-    <ProjectContent :html="file.html" />
-  </div>
-</section>
-
-<section v-if="project.locations.length" class="content-section">
-  <h2>Locations</h2>
-  <div v-for="file in project.locations" :key="file.name" class="file-block">
-    <h3>{{ formatName(file.name) }}</h3>
-    <ProjectContent :html="file.html" />
-  </div>
-</section>
-
-<section v-if="project.knowledge.length" class="content-section">
-  <h2>Knowledge</h2>
-  <div v-for="file in project.knowledge" :key="file.name" class="file-block">
-    <h3>{{ formatName(file.name) }}</h3>
-    <ProjectContent :html="file.html" />
-  </div>
-</section>
-
-<section v-if="project.dialogue.length" class="content-section">
-  <h2>Dialogue</h2>
-  <div v-for="file in project.dialogue" :key="file.name" class="file-block">
-    <h3>{{ formatName(file.name) }}</h3>
-    <ProjectContent :html="file.html" />
-  </div>
-</section>
-
-<section v-if="project.quests.length" class="content-section">
-  <h2>Quests</h2>
-  <div v-for="file in project.quests" :key="file.name" class="file-block">
-    <h3>{{ formatName(file.name) }}</h3>
-    <ProjectContent :html="file.html" />
-  </div>
-</section>
-
-<section v-if="project.events.length" class="content-section">
-  <h2>Events</h2>
-  <div v-for="file in project.events" :key="file.name" class="file-block">
-    <h3>{{ formatName(file.name) }}</h3>
-    <ProjectContent :html="file.html" />
-  </div>
-</section>
-
-<section v-if="project.memories.length" class="content-section">
-  <h2>Memories</h2>
-  <div v-for="file in project.memories" :key="file.name" class="file-block">
-    <h3>{{ formatName(file.name) }}</h3>
-    <ProjectContent :html="file.html" />
-  </div>
-</section>
-
-<section v-if="project.exports.novel.length" class="content-section">
-  <h2>Novel</h2>
-  <div v-for="file in project.exports.novel" :key="file.name" class="file-block">
-    <h3>{{ formatName(file.name) }}</h3>
-    <ProjectContent :html="file.html" />
-  </div>
-</section>
-
-<section v-if="project.exports.screenplay.length" class="content-section">
-  <h2>Screenplay</h2>
-  <div v-for="file in project.exports.screenplay" :key="file.name" class="file-block">
-    <h3>{{ formatName(file.name) }}</h3>
-    <ProjectContent :html="file.html" />
-  </div>
-</section>
-
-<section v-if="project.exports.godot.length" class="content-section">
-  <h2>Godot Export</h2>
-  <div v-for="file in project.exports.godot" :key="file.name" class="file-block">
-    <h3>{{ formatName(file.name) }}</h3>
-    <ProjectContent :html="file.html" />
-  </div>
-</section>
-
-<section v-if="project.exports.json.length" class="content-section">
-  <h2>JSON Export</h2>
-  <div v-for="file in project.exports.json" :key="file.name" class="file-block">
-    <h3>{{ formatName(file.name) }}</h3>
-    <ProjectContent :html="file.html" />
-  </div>
-</section>
+<div class="section-grid">
+  <a
+    v-for="s in sections"
+    :key="s.key"
+    v-show="s.count(project) > 0"
+    :href="withBase('/project/' + project.slug + '/' + s.key)"
+    class="section-card"
+  >
+    <h3>{{ s.label }}</h3>
+    <p class="count">{{ s.count(project) }} file{{ s.count(project) !== 1 ? 's' : '' }}</p>
+  </a>
+</div>
 
 <footer class="project-footer">
   <a :href="withBase('/projects')">&larr; Back to projects</a>
@@ -130,16 +60,33 @@ function formatName(n) {
 
 # Project Not Found
 
-The project `{{ name || '' }}` was not found under `projects/active/`.
+The project was not found under `projects/active/`.
 
 [Back to project list](/projects)
 
 </div>
 
 <style scoped>
-.content-section { margin-top: 2em; padding-top: 1em; border-top: 1px solid var(--vp-c-divider); }
-.content-section h2 { font-size: 1.5em; margin-bottom: 0.8em; }
-.file-block { margin-bottom: 2em; padding: 1em 1.2em; border: 1px solid var(--vp-c-divider); border-radius: 8px; background: var(--vp-c-bg-soft); }
-.file-block h3 { font-size: 1.1em; margin-top: 0; margin-bottom: 0.8em; color: var(--vp-c-brand); }
+.overview { margin-bottom: 2em; }
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1em;
+  margin-top: 1em;
+}
+.section-card {
+  display: block;
+  padding: 1em 1.2em;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.section-card:hover {
+  border-color: var(--vp-c-brand);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+.section-card h3 { margin: 0 0 0.3em; font-size: 1em; color: var(--vp-c-text-1); }
+.section-card .count { margin: 0; font-size: 0.85em; color: var(--vp-c-text-2); }
 .project-footer { margin-top: 3em; padding-top: 1.5em; border-top: 1px solid var(--vp-c-divider); }
 </style>
