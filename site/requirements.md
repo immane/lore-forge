@@ -220,4 +220,4 @@ Read AGENTS.md. Then verify:
 
 ---
 
-*[Back to User Guide](/lore-forge/guide)*
+*[Back to User Guide](/guide)*

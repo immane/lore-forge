@@ -220,4 +220,4 @@ Read AGENTS.md. Then verify:
 
 ---
 
-*[返回使用指南](/lore-forge/zh/guide)*
+*[返回使用指南](/zh/guide)*

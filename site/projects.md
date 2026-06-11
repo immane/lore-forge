@@ -4,6 +4,7 @@ aside: false
 
 <script setup>
 import { data as projects } from './projects.data.ts'
+import { withBase } from 'vitepress'
 </script>
 
 # Browse Projects
@@ -20,7 +21,7 @@ To add a project, place it under `projects/active/` and rebuild the site.
   <a
     v-for="p in projects"
     :key="p.slug"
-    :href="'/lore-forge/project/' + p.slug"
+    :href="withBase('/project/' + p.slug)"
     class="project-card"
   >
     <h2>{{ p.name }}</h2>

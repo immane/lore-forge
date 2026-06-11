@@ -41,6 +41,15 @@ jobs:
             npm install
           fi
 
+      - name: Set base path
+        run: |
+          REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2)
+          if [ "$REPO_NAME" = "${{ github.repository_owner }}.github.io" ]; then
+            echo "VITEPRESS_BASE=/" >> $GITHUB_ENV
+          else
+            echo "VITEPRESS_BASE=/$REPO_NAME/" >> $GITHUB_ENV
+          fi
+
       - name: Build with VitePress
         run: npm run docs:build
 

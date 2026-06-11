@@ -22,7 +22,7 @@ Read REQUIREMENT.md. Detect my platform and set up the minimum required MCP serv
 Verify each tool is working and report which capabilities are now available.
 ```
 
-Then restart your platform. See the [Requirements](/lore-forge/requirements) page for manual setup and per-platform details.
+Then restart your platform. See the [Requirements](/requirements) page for manual setup and per-platform details.
 
 ### Open The Repository
 
@@ -320,7 +320,7 @@ Lore Forge is designed for continuous iteration, not one-shot generation:
 
 Once projects are built and exported, you can browse them on this site:
 
-- Go to **[Projects](/lore-forge/projects)** to see all available story worlds
+- Go to **[Projects](/projects)** to see all available story worlds
 - Click any project to explore its full Story Bible — characters, locations, knowledge, and exports
 - Read novel chapters under the **Novel** section of each project
 

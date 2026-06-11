@@ -4,6 +4,7 @@ aside: false
 
 <script setup>
 import { data as projects } from '../projects.data.ts'
+import { withBase } from 'vitepress'
 </script>
 
 # 浏览项目
@@ -20,7 +21,7 @@ import { data as projects } from '../projects.data.ts'
   <a
     v-for="p in projects"
     :key="p.slug"
-    :href="'/lore-forge/zh/project/' + p.slug"
+    :href="withBase('/zh/project/' + p.slug)"
     class="project-card"
   >
     <h2>{{ p.name }}</h2>

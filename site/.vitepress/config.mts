@@ -34,8 +34,10 @@ const chineseSidebar = [
   },
 ]
 
+const base = process.env.VITEPRESS_BASE || '/'
+
 export default defineConfig({
-  base: '/lore-forge/',
+  base,
   ignoreDeadLinks: true,
   themeConfig: {
     socialLinks: [{ icon: 'github', link: 'https://github.com/immane/lore-forge' }],

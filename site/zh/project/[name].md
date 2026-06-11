@@ -4,7 +4,7 @@ aside: false
 
 <script setup>
 import { data as projects } from '../../projects.data.ts'
-import { useRoute } from 'vitepress'
+import { useRoute, withBase } from 'vitepress'
 
 const route = useRoute()
 const name = route?.params?.name
@@ -120,7 +120,7 @@ function formatName(n) {
 </section>
 
 <footer class="project-footer">
-  <a href="/lore-forge/zh/projects">&larr; 返回项目列表</a>
+  <a :href="withBase('/zh/projects')">&larr; 返回项目列表</a>
 </footer>
 
 </div>
@@ -131,7 +131,7 @@ function formatName(n) {
 
 在 `projects/active/` 下未找到项目 `{{ name || '' }}`。
 
-[返回项目列表](/lore-forge/zh/projects)
+[返回项目列表](/zh/projects)
 
 </div>
 

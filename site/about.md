@@ -26,7 +26,7 @@ Everything you read on this site is derived from an approved Story Bible. Nothin
 
 ### Browse Projects
 
-Go to the [Projects](/lore-forge/projects) page to see all available story worlds. Each card shows the project name and a summary of its contents.
+Go to the [Projects](/projects) page to see all available story worlds. Each card shows the project name and a summary of its contents.
 
 ### Read a Project
 
