@@ -3,11 +3,11 @@ aside: false
 ---
 
 <script setup>
-import { computed } from 'vue'
+import { computed, watchEffect } from 'vue'
 import { data as projects } from '../../projects.data.ts'
 import { useData, withBase } from 'vitepress'
 
-const { params } = useData()
+const { params, page } = useData()
 const name = computed(() => params?.value?.name)
 const sectionKey = computed(() => params?.value?.section)
 const project = computed(() => name.value ? projects.find(p => p.slug === name.value) : undefined)
@@ -38,6 +38,10 @@ function getFiles(project, section) {
 
 const label = computed(() => sectionLabels[sectionKey?.value] || sectionKey?.value || '')
 const files = computed(() => project.value ? getFiles(project.value, sectionKey?.value) : [])
+
+watchEffect(() => {
+  if (project.value && label.value) page.value.title = project.value.name + ' / ' + label.value
+})
 
 function formatName(n) {
   return n.replace(/_/g, ' ').replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())

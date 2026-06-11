@@ -3,13 +3,17 @@ aside: false
 ---
 
 <script setup>
-import { computed } from 'vue'
+import { computed, watchEffect } from 'vue'
 import { data as projects } from '../projects.data.ts'
 import { useData, withBase } from 'vitepress'
 
-const { params } = useData()
+const { params, page } = useData()
 const name = computed(() => params?.value?.name)
 const project = computed(() => name.value ? projects.find(p => p.slug === name.value) : undefined)
+
+watchEffect(() => {
+  if (project.value) page.value.title = project.value.name
+})
 
 const sections = [
   { key: 'story', label: 'Story', path: 'story', count: p => p.story.length },
