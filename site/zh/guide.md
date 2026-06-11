@@ -56,7 +56,7 @@ Lore Forge 支持 **Codex、Claude Code、OpenCode、Cursor、GitHub Copilot age
 目标平台：PC
 ```
 
-AI 会在 `projects/active/moonlight/` 下搭建项目结构，然后开始概念发现访谈。
+AI 会在 `projects/active/moonlight/` 下搭建项目结构，然后以**延迟写入模式**开始概念发现访谈。回答会暂存到 scratch 文件中以保持对话流畅。说 `写入` 来构建 Story Bible 文件，或说 `提交` 来构建并提交。
 
 ### 继续已有项目
 
@@ -117,7 +117,7 @@ projects/active/moonlight/ 下的 Story Bible 已完成并通过审计。
 
 ### 阶段 1 — 概念发现
 
-**Lore Architect** 智能体通过访谈提取世界观的基石。
+**Lore Architect** 智能体通过访谈提取世界观的基石。默认使用**延迟写入模式**：你的答案会累积在 `.pending/interview_scratch.md` 中，Story Bible 文件在你确认（`写入` 或 `提交`）时批量构建。
 
 ```
 创建一个新的 Lore Forge 项目并开始概念发现访谈。
@@ -139,7 +139,7 @@ Lore Architect 会问以下结构化问题：
 - **结局设计** — "故事应该有哪些结局？每个结局如何让人觉得值得？"
 - **内容边界** — "需要避免哪些主题、基调或内容类型？"
 
-你的答案会写入：
+**工作方式：** 答案首先记录到 `.pending/interview_scratch.md`，以保持快速流畅的对话问答。当你说 `写入` 或 `提交` 时，AI 会批量处理所有累积的答案，写入以下文件：
 
 - `story/vision.md` — 情感核心、承诺、基调、核心问题
 - `story/themes.md` — 主要主题、子主题、母题地图
@@ -308,7 +308,7 @@ projects/active/moonlight/ 下的 Story Bible 已完成并通过审计。
 Lore Forge 是为持续迭代设计的，而非一次性生成：
 
 ```
-1. 访谈 → Story Bible 增长
+1. 访谈（延迟写入） → Story Bible 增长
 2. 编写新内容（角色、场景、对话）
 3. Lore Auditor 检查一致性
 4. 修复问题，如有空白则重新访谈

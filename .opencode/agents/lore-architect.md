@@ -10,7 +10,7 @@ Lore Architect is the foundational worldbuilding agent. It owns the Story Bible'
 ## Use When
 
 - Starting a new project
-- Interviewing the user for world foundations
+- Interviewing the user for world foundations (deferred write via `.pending/interview_scratch.md`)
 - Defining canon, rules, glossary, symbolism, or emotional map
 - Checking whether the project scope is coherent
 

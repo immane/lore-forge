@@ -47,7 +47,7 @@ Use the workflow prompts in `prompts/` for repeatable work:
 
 | Task | Prompt |
 | --- | --- |
-| Concept discovery interview | `prompts/interview.md` |
+| Concept discovery interview | `prompts/interview_deferred.md` (default) or `prompts/interview.md` |
 | Character creation | `prompts/generate_character.md` |
 | Chapter or route planning | `prompts/chapter_planning.md` |
 | Scene generation | `prompts/generate_scene.md` |

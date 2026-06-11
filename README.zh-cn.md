@@ -50,7 +50,7 @@ lore-forge/
 
 | 工作流 | 输入 | 输出 |
 |----------|-------|--------|
-| 访谈 | 用户回答 | 愿景、主题、世界规则 |
+| 访谈 | 用户回答 | 愿景、主题、世界规则（延迟写入，确认后批量构建） |
 | 生成角色 | 角色概念 | 完整的心理画像 |
 | 章节规划 | Story Bible | 章节大纲 + 依赖关系图 |
 | 生成场景 | 章节上下文 | 场景定义 |
@@ -195,7 +195,7 @@ projects/active/moonlight/ 下的 Story Bible 已完成并通过审计。
 目标平台：PC
 ```
 
-AI 在 `projects/active/moonlight/` 下搭建项目，包含完整的 Story Bible 目录结构，然后开始访谈。
+AI 在 `projects/active/moonlight/` 下搭建项目，包含完整的 Story Bible 目录结构，然后以**延迟写入模式**开始访谈。答案暂存在 `.pending/interview_scratch.md` 中以保持对话流畅，当你说 `写入` 或 `提交` 时，AI 一次性批量构建所有 Story Bible 文件。
 
 Lore Architect 会问你以下结构性问题：
 
@@ -206,7 +206,12 @@ Lore Architect 会问你以下结构性问题：
 - **结局设计** —— "故事应该有哪些结局？每个结局如何让人觉得值得？"
 - **内容边界** —— "需要避免哪些主题、基调或内容类型？"
 
-回答每个问题。AI 会将你的答案写入：
+回答每个问题。你的答案会被记录到 `.pending/interview_scratch.md`——快速流畅，不会在每次回答后执行多文件写入。当你准备好时触发构建：
+
+- `写入` / `build` —— 将所有累积的答案写入 Story Bible 文件
+- `提交` / `commit` —— 写入 + `git add` + `git commit`
+
+AI 会将你的答案写入：
 - `projects/active/moonlight/story/vision.md`
 - `projects/active/moonlight/story/themes.md`
 - `projects/active/moonlight/story/emotional_core.md`
@@ -402,7 +407,7 @@ projects/active/moonlight/ 下的 Story Bible 已完成并通过审计。
 Lore Forge 是为持续迭代而设计的，而非一次性生成：
 
 ```
-1. 访谈 → Story Bible 增长
+1. 访谈（延迟写入） → Story Bible 增长
 2. 编写新内容（角色、场景、对话）
 3. Lore Auditor 检查一致性
 4. 修复问题，如有空白则重新访谈

@@ -10,7 +10,7 @@ Lore Forge treats story creation as knowledge engineering rather than text gener
 
 ```text
 Idea
-  -> Interview
+  -> Interview (deferred write: scratch → batch build on confirmation)
   -> Story Bible
   -> Character Design
   -> Timeline

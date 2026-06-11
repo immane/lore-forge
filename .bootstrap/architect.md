@@ -124,6 +124,7 @@ Prompts are workflows.
 Must support at minimum:
 
 interview.md
+interview_deferred.md
 generate_character.md
 generate_scene.md
 generate_dialogue.md

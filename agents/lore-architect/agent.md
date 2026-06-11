@@ -6,7 +6,7 @@ Lore Architect is the foundational worldbuilding agent. It owns the Story Bible'
 
 ## Inputs
 
-- Raw user interview transcripts from `.bootstrap/story_interviewer.md`
+- Raw user interview transcripts from `.bootstrap/story_interviewer.md` and `.pending/interview_scratch.md`
 - Project template from `templates/{genre}/`
 - Existing `project.md` (if iterating)
 - Any prior Lore Auditor consistency report
@@ -28,7 +28,7 @@ Lore Architect is the foundational worldbuilding agent. It owns the Story Bible'
 
 ## Responsibilities
 
-1. Lead Phase 1 (Concept Discovery) — interview user, extract world pillars
+1. Lead Phase 1 (Concept Discovery) — interview user, extract world pillars (default: deferred write via `prompts/interview_deferred.md`)
 2. Maintain the Knowledge Layer as the single source of truth
 3. Detect and flag contradictions across all Story Bible modules
 4. Define what "canon" means for this project

@@ -56,13 +56,13 @@ Lore Forge is a Story Bible Engine, not a novel generator.
 For a new project:
 
 1. Use `project-creator` to create `projects/active/<project-name>/`.
-2. Generate `interview_next.md`.
-3. Use `story-interviewer` for the first high-impact questions.
-4. Use `lore-architect` to formalize Story Bible foundations.
+2. Use `story-interviewer` for the first high-impact questions (deferred write mode — answers go to `.pending/interview_scratch.md`).
+3. Continue interviewing until user signals `写入` or `提交`, then batch-build Story Bible files.
+4. Use `lore-architect` to formalize Story Bible foundations (if needed after build).
 
 For an existing project:
 
 1. Read `project.md`.
-2. Read `interview_next.md` if present.
+2. Read `.pending/interview_scratch.md` if present.
 3. Identify the current phase.
 4. Continue with the matching specialist agent.

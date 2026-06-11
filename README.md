@@ -50,7 +50,7 @@ lore-forge/
 
 | Workflow | Input | Output |
 |----------|-------|--------|
-| Interview | User responses | Vision, Themes, World Rules |
+| Interview | User responses | Vision, Themes, World Rules (deferred-write, bulk-built on confirmation) |
 | Generate Character | Character concept | Full psychological profile |
 | Chapter Planning | Story Bible | Chapter outline + dependency graph |
 | Generate Scene | Chapter context | Scene definition |
@@ -195,7 +195,7 @@ Target Length: 6-8 hours
 Target Platform: PC
 ```
 
-The AI scaffolds your project at `projects/active/moonlight/` with the full Story Bible directory structure, then starts the interview.
+The AI scaffolds your project at `projects/active/moonlight/` with the full Story Bible directory structure, then starts the interview in **deferred write mode**. Answers accumulate in `.pending/interview_scratch.md` for fast conversation flow. When you say `build` or `commit`, the AI batch-builds all Story Bible files at once.
 
 The Lore Architect will ask structured questions about:
 
@@ -206,7 +206,12 @@ The Lore Architect will ask structured questions about:
 - **Ending Design** — "What endings should the story have? What makes each feel earned?"
 - **Content Boundaries** — "Any topics, tones, or content types to avoid?"
 
-Answer each question. The AI writes your answers into:
+Answer each question. Your answers are recorded to `.pending/interview_scratch.md` — fast, conversational, no multi-file writes per answer. When ready, trigger the build:
+
+- `build` / `save` — write all accumulated answers to Story Bible files
+- `commit` — write + `git add` + `git commit`
+
+The AI writes your answers into:
 - `projects/active/moonlight/story/vision.md`
 - `projects/active/moonlight/story/themes.md`
 - `projects/active/moonlight/story/emotional_core.md`
@@ -411,7 +416,7 @@ Novel export is a derived prose pass. It should transform approved Story Bible, 
 Lore Forge is designed for continuous iteration, not one-shot generation:
 
 ```
-1. Interview → Story Bible grows
+1. Interview (deferred write) → Story Bible grows
 2. New content written (characters, scenes, dialogue)
 3. Lore Auditor checks consistency
 4. Fix issues, re-interview if gaps found

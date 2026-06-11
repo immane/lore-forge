@@ -1,5 +1,7 @@
 # Interview — Concept Discovery Workflow
 
+> **Note:** The default interview mode is now Deferred Write (`prompts/interview_deferred.md`), which separates conversation from file construction for a faster Q&A flow. Use this file only if you need immediate-write behavior.
+
 ## Trigger Conditions
 
 - New project is created via `project_creator.md`

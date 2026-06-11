@@ -88,6 +88,9 @@ dialogue/
 quests/
 knowledge/
 exports/
+.pending/
+
+.pending/archive/
 
 exports/godot/
 exports/json/
@@ -137,6 +140,16 @@ README.md
 quests/
 
 README.md
+
+.pending/
+
+interview_scratch.md
+
+Generate:
+
+Empty file.
+
+Content will be populated during the Concept Discovery interview phase.
 
 ---
 
@@ -347,4 +360,6 @@ Finally output:
 
 The recommended next step must always be:
 
-Use the Story Interviewer to enter the interview phase.
+Use the Story Interviewer (deferred write mode, `prompts/interview_deferred.md`) to enter the interview phase.
+
+Answers will be accumulated in `.pending/interview_scratch.md`. Story Bible files will be built only when the user signals `build` or `commit`.

@@ -63,6 +63,8 @@ mode: subagent
 - `quests/`
 - `knowledge/`
 - `exports/`
+- `.pending/`
+- `.pending/archive/`
 
 ### Required Files
 
@@ -84,6 +86,7 @@ mode: subagent
 - `locations/README.md`
 - `dialogue/README.md`
 - `quests/README.md`
+- `.pending/interview_scratch.md`（空文件，在概念发现访谈阶段填充）
 
 ## project.md
 

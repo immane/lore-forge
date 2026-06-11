@@ -56,7 +56,7 @@ The assistant should create the project under:
 projects/active/moonlight/
 ```
 
-Then it should start the concept discovery interview.
+Then it should start the concept discovery interview in **deferred write mode** — questions are fast and conversational, answers go to a scratch file, and Story Bible files are built in one batch when you say `build` or `commit`.
 
 ## 3. Continue The Interview
 
@@ -67,7 +67,7 @@ Continue the Moonlight project.
 Read the current Story Bible, find the highest-impact missing information, and ask me the next focused questions.
 ```
 
-Answer the questions naturally. The assistant should update the Story Bible as you go.
+Answer the questions naturally. Your answers are recorded to a scratch file for fast conversation flow. When ready, say `build` to write Story Bible files, or `commit` to build and git commit.
 
 ## 4. Create Characters
 

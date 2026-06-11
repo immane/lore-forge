@@ -56,7 +56,7 @@ Target Length: 6-8 hours
 Target Platform: PC
 ```
 
-The AI scaffolds your project under `projects/active/moonlight/` and begins the concept discovery interview.
+The AI scaffolds your project under `projects/active/moonlight/` and begins the concept discovery interview in **deferred write mode**. Answers are recorded to a scratch file for fast conversation flow. Say `build` to write Story Bible files or `commit` to build and commit.
 
 ### Continue an Existing Project
 
@@ -117,7 +117,7 @@ The complete workflow from a blank folder to a game-ready or manuscript-ready ex
 
 ### Phase 1 — Concept Discovery
 
-The **Lore Architect** agent interviews you to extract your world's foundation.
+The **Lore Architect** agent interviews you to extract your world's foundation. By default, interviews run in **deferred write mode**: your answers accumulate in `.pending/interview_scratch.md`, and Story Bible files are batch-built when you confirm with `build` or `commit`.
 
 ```
 Create a new Lore Forge project and start the concept discovery interview.
@@ -139,7 +139,7 @@ The Lore Architect asks structured questions about:
 - **Ending Design** — "What endings should the story have? What makes each feel earned?"
 - **Content Boundaries** — "Any topics, tones, or content types to avoid?"
 
-Your answers are written into:
+**How it works:** Answers are first recorded to `.pending/interview_scratch.md` for fast, conversational Q&A. When you say `build` or `commit`, the AI batch-processes all accumulated answers into these files:
 
 - `story/vision.md` — emotional core, promise, tone, central question
 - `story/themes.md` — primary themes, sub-themes, motif map
@@ -308,7 +308,7 @@ Output:
 Lore Forge is designed for continuous iteration, not one-shot generation:
 
 ```
-1. Interview → Story Bible grows
+1. Interview (deferred write) → Story Bible grows
 2. New content written (characters, scenes, dialogue)
 3. Lore Auditor checks consistency
 4. Fix issues, re-interview if gaps found
