@@ -26,6 +26,11 @@ jobs:
         with:
           node-version: 20
 
+      - name: Set base path
+        run: |
+          REPO_NAME=$(echo $GITHUB_REPOSITORY | cut -d'/' -f2)
+          echo "VITEPRESS_BASE=/$REPO_NAME/" >> $GITHUB_ENV
+
       - name: Init project (if needed)
         run: |
           if [ ! -f package.json ]; then
@@ -39,15 +44,6 @@ jobs:
             npm ci
           else
             npm install
-          fi
-
-      - name: Set base path
-        run: |
-          REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2)
-          if [ "$REPO_NAME" = "${{ github.repository_owner }}.github.io" ]; then
-            echo "VITEPRESS_BASE=/" >> $GITHUB_ENV
-          else
-            echo "VITEPRESS_BASE=/$REPO_NAME/" >> $GITHUB_ENV
           fi
 
       - name: Build with VitePress
