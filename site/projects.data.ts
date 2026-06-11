@@ -7,7 +7,7 @@ const MarkdownIt = require('markdown-it')
 const md = new MarkdownIt({ html: true, linkify: true })
 
 function headingSlug(text: string): string {
-  return text.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9\-_]/g, '')
+  return text.trim().replace(/\s+/g, '-').replace(/[\/#?[\]]/g, '')
 }
 
 md.renderer.rules.heading_open = function (tokens: any, idx: number) {
