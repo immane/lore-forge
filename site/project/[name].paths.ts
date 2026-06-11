@@ -13,7 +13,7 @@ export default {
       })
       .map(name => ({
         params: {
-          name: name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
+          name: name.trim().replace(/\s+/g, '-').replace(/[\/#?[\]]/g, ''),
         },
       }))
   },

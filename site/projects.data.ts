@@ -53,7 +53,7 @@ export default {
 }
 
 function slugify(name: string): string {
-  return name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')
+  return name.trim().replace(/\s+/g, '-').replace(/[\/#?[\]]/g, '')
 }
 
 function readProject(root: string, name: string): ProjectData {
