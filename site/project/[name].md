@@ -3,13 +3,13 @@ aside: false
 ---
 
 <script setup>
+import { computed } from 'vue'
 import { data as projects } from '../projects.data.ts'
-import { useRoute, withBase } from 'vitepress'
+import { useData, withBase } from 'vitepress'
 
-const route = useRoute()
-const raw = route?.params?.name
-const name = raw ? decodeURIComponent(raw) : undefined
-const project = name ? projects.find(p => p.slug === name) : undefined
+const { params } = useData()
+const name = computed(() => params?.value?.name)
+const project = computed(() => name.value ? projects.find(p => p.slug === name.value) : undefined)
 
 function formatName(n) {
   return n.replace(/_/g, ' ').replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())

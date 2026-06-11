@@ -21,7 +21,7 @@ import { withBase } from 'vitepress'
   <a
     v-for="p in projects"
     :key="p.slug"
-    :href="withBase('/zh/project/' + encodeURIComponent(p.slug))"
+    :href="withBase('/zh/project/' + p.slug)"
     class="project-card"
   >
     <h2>{{ p.name }}</h2>
