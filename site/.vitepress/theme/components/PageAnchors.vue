@@ -1,0 +1,110 @@
+<template>
+  <div v-if="anchors.length" class="page-anchors">
+    <p class="anchor-title">{{ isZh ? '本页导航' : 'On This Page' }}</p>
+    <nav class="anchor-list">
+      <a
+        v-for="a in anchors"
+        :key="a.id"
+        :href="'#' + a.id"
+        :class="['anchor-link', a.level === 'h3' ? 'anchor-sub' : '']"
+      >{{ a.text }}</a>
+    </nav>
+  </div>
+</template>
+
+<script setup>
+import { ref, computed, onMounted, onUnmounted, watch, nextTick } from 'vue'
+import { useRoute, useData } from 'vitepress'
+
+const route = useRoute()
+const { lang } = useData()
+const isZh = computed(() => lang?.value === 'zh-CN')
+
+const anchors = ref([])
+let timer = null
+
+function extract() {
+  let headings = document.querySelectorAll('.vp-doc h2[id], .vp-doc h3[id]')
+  if (headings.length === 0) {
+    headings = document.querySelectorAll('.VPDoc h2[id], .VPDoc h3[id]')
+  }
+  if (headings.length === 0) {
+    const all = document.querySelectorAll('h2[id], h3[id]')
+    const nav = document.querySelector('.VPNav')
+    const side = document.querySelector('.VPSidebar')
+    headings = Array.from(all).filter(h => {
+      if (nav?.contains(h)) return false
+      if (side?.contains(h)) return false
+      return true
+    })
+  }
+  anchors.value = Array.from(headings)
+    .map(h => ({
+      id: h.id,
+      text: h.textContent?.replace(/\s*#\s*$/, '').trim() || '',
+      level: h.tagName.toLowerCase(),
+    }))
+    .filter(a => a.id && a.text)
+}
+
+async function collect(retries = 0) {
+  clearTimeout(timer)
+  await nextTick()
+  timer = setTimeout(() => {
+    extract()
+    if (anchors.value.length === 0 && retries < 6) {
+      collect(retries + 1)
+    }
+  }, retries === 0 ? 200 : 300 + retries * 300)
+}
+
+onMounted(() => collect(0))
+
+onUnmounted(() => {
+  clearTimeout(timer)
+  anchors.value = []
+})
+
+watch(() => route.path, () => {
+  anchors.value = []
+  collect(0)
+})
+</script>
+
+<style scoped>
+.page-anchors {
+  padding: 0 24px 16px;
+  border-bottom: 1px solid var(--vp-c-divider);
+  margin-bottom: 8px;
+}
+.anchor-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--vp-c-text-2);
+  margin: 0 0 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.anchor-list {
+  display: flex;
+  flex-direction: column;
+}
+.anchor-link {
+  display: block;
+  padding: 2px 0;
+  font-size: 13px;
+  color: var(--vp-c-text-2);
+  text-decoration: none;
+  line-height: 1.5;
+  border-left: 2px solid transparent;
+  padding-left: 10px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.anchor-link:hover {
+  color: var(--vp-c-brand);
+}
+.anchor-link.anchor-sub {
+  padding-left: 22px;
+  font-size: 12.5px;
+}
+</style>

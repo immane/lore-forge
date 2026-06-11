@@ -3,121 +3,56 @@ aside: false
 ---
 
 <script setup>
+import { computed, watchEffect } from 'vue'
 import { data as projects } from '../../projects.data.ts'
-import { useRoute, withBase } from 'vitepress'
+import { useData, withBase } from 'vitepress'
 
-const route = useRoute()
-const name = route?.params?.name
-const project = name ? projects.find(p => p.slug === name) : undefined
+const { params, page } = useData()
+const name = computed(() => params?.value?.name)
+const project = computed(() => name.value ? projects.find(p => p.slug === name.value) : undefined)
 
-function formatName(n) {
-  return n.replace(/_/g, ' ').replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
-}
+watchEffect(() => {
+  if (project.value) page.value.title = project.value.name
+})
+
+const sections = [
+  { key: 'story', label: '故事', path: 'story', count: p => p.story.length },
+  { key: 'characters', label: '角色', path: 'characters', count: p => p.characters.length },
+  { key: 'locations', label: '地点', path: 'locations', count: p => p.locations.length },
+  { key: 'knowledge', label: '知识', path: 'knowledge', count: p => p.knowledge.length },
+  { key: 'dialogue', label: '对话', path: 'dialogue', count: p => p.dialogue.length },
+  { key: 'quests', label: '任务', path: 'quests', count: p => p.quests.length },
+  { key: 'events', label: '事件', path: 'events', count: p => p.events.length },
+  { key: 'memories', label: '记忆', path: 'memories', count: p => p.memories.length },
+  { key: 'novel', label: '小说', path: 'novel', count: p => p.exports.novel.length },
+  { key: 'screenplay', label: '剧本', path: 'screenplay', count: p => p.exports.screenplay.length },
+  { key: 'godot', label: 'Godot 导出', path: 'godot', count: p => p.exports.godot.length },
+  { key: 'json', label: 'JSON 导出', path: 'json', count: p => p.exports.json.length },
+]
 </script>
 
 <div v-if="project">
 
 # {{ project.name }}
 
-<section v-if="project.project" class="content-section">
+<section v-if="project.project" class="overview">
   <ProjectContent :html="project.project.html" />
 </section>
 
-<section v-if="project.story.length" class="content-section">
-  <h2>故事</h2>
-  <div v-for="file in project.story" :key="file.name" class="file-block">
-    <h3>{{ formatName(file.name) }}</h3>
-    <ProjectContent :html="file.html" />
-  </div>
-</section>
+<h2>章节</h2>
 
-<section v-if="project.characters.length" class="content-section">
-  <h2>角色</h2>
-  <div v-for="file in project.characters" :key="file.name" class="file-block">
-    <h3>{{ formatName(file.name) }}</h3>
-    <ProjectContent :html="file.html" />
-  </div>
-</section>
-
-<section v-if="project.locations.length" class="content-section">
-  <h2>地点</h2>
-  <div v-for="file in project.locations" :key="file.name" class="file-block">
-    <h3>{{ formatName(file.name) }}</h3>
-    <ProjectContent :html="file.html" />
-  </div>
-</section>
-
-<section v-if="project.knowledge.length" class="content-section">
-  <h2>知识</h2>
-  <div v-for="file in project.knowledge" :key="file.name" class="file-block">
-    <h3>{{ formatName(file.name) }}</h3>
-    <ProjectContent :html="file.html" />
-  </div>
-</section>
-
-<section v-if="project.dialogue.length" class="content-section">
-  <h2>对话</h2>
-  <div v-for="file in project.dialogue" :key="file.name" class="file-block">
-    <h3>{{ formatName(file.name) }}</h3>
-    <ProjectContent :html="file.html" />
-  </div>
-</section>
-
-<section v-if="project.quests.length" class="content-section">
-  <h2>任务</h2>
-  <div v-for="file in project.quests" :key="file.name" class="file-block">
-    <h3>{{ formatName(file.name) }}</h3>
-    <ProjectContent :html="file.html" />
-  </div>
-</section>
-
-<section v-if="project.events.length" class="content-section">
-  <h2>事件</h2>
-  <div v-for="file in project.events" :key="file.name" class="file-block">
-    <h3>{{ formatName(file.name) }}</h3>
-    <ProjectContent :html="file.html" />
-  </div>
-</section>
-
-<section v-if="project.memories.length" class="content-section">
-  <h2>记忆</h2>
-  <div v-for="file in project.memories" :key="file.name" class="file-block">
-    <h3>{{ formatName(file.name) }}</h3>
-    <ProjectContent :html="file.html" />
-  </div>
-</section>
-
-<section v-if="project.exports.novel.length" class="content-section">
-  <h2>小说</h2>
-  <div v-for="file in project.exports.novel" :key="file.name" class="file-block">
-    <h3>{{ formatName(file.name) }}</h3>
-    <ProjectContent :html="file.html" />
-  </div>
-</section>
-
-<section v-if="project.exports.screenplay.length" class="content-section">
-  <h2>剧本</h2>
-  <div v-for="file in project.exports.screenplay" :key="file.name" class="file-block">
-    <h3>{{ formatName(file.name) }}</h3>
-    <ProjectContent :html="file.html" />
-  </div>
-</section>
-
-<section v-if="project.exports.godot.length" class="content-section">
-  <h2>Godot 导出</h2>
-  <div v-for="file in project.exports.godot" :key="file.name" class="file-block">
-    <h3>{{ formatName(file.name) }}</h3>
-    <ProjectContent :html="file.html" />
-  </div>
-</section>
-
-<section v-if="project.exports.json.length" class="content-section">
-  <h2>JSON 导出</h2>
-  <div v-for="file in project.exports.json" :key="file.name" class="file-block">
-    <h3>{{ formatName(file.name) }}</h3>
-    <ProjectContent :html="file.html" />
-  </div>
-</section>
+<div class="section-grid">
+  <a
+    v-for="s in sections"
+    :key="s.key"
+    v-show="s.count(project) > 0"
+    :href="withBase('/zh/project/' + project.slug + '/' + s.key)"
+    class="section-card"
+  >
+    <h3>{{ s.label }}</h3>
+    <p class="count">{{ s.count(project) }} 个文件</p>
+  </a>
+</div>
 
 <footer class="project-footer">
   <a :href="withBase('/zh/projects')">&larr; 返回项目列表</a>
@@ -129,16 +64,33 @@ function formatName(n) {
 
 # 项目未找到
 
-在 `projects/active/` 下未找到项目 `{{ name || '' }}`。
+在 `projects/active/` 下未找到项目。
 
 [返回项目列表](/zh/projects)
 
 </div>
 
 <style scoped>
-.content-section { margin-top: 2em; padding-top: 1em; border-top: 1px solid var(--vp-c-divider); }
-.content-section h2 { font-size: 1.5em; margin-bottom: 0.8em; }
-.file-block { margin-bottom: 2em; padding: 1em 1.2em; border: 1px solid var(--vp-c-divider); border-radius: 8px; background: var(--vp-c-bg-soft); }
-.file-block h3 { font-size: 1.1em; margin-top: 0; margin-bottom: 0.8em; color: var(--vp-c-brand); }
+.overview { margin-bottom: 2em; }
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1em;
+  margin-top: 1em;
+}
+.section-card {
+  display: block;
+  padding: 1em 1.2em;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.section-card:hover {
+  border-color: var(--vp-c-brand);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+.section-card h3 { margin: 0 0 0.3em; font-size: 1em; color: var(--vp-c-text-1); }
+.section-card .count { margin: 0; font-size: 0.85em; color: var(--vp-c-text-2); }
 .project-footer { margin-top: 3em; padding-top: 1.5em; border-top: 1px solid var(--vp-c-divider); }
 </style>

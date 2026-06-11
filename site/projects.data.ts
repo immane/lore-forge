@@ -6,6 +6,20 @@ const require = createRequire(import.meta.url)
 const MarkdownIt = require('markdown-it')
 const md = new MarkdownIt({ html: true, linkify: true })
 
+function headingSlug(text: string): string {
+  return text.trim().replace(/\s+/g, '-').replace(/[\/#?[\]]/g, '')
+}
+
+md.renderer.rules.heading_open = function (tokens: any, idx: number) {
+  const token = tokens[idx]
+  const content = tokens[idx + 1]
+  let slug = ''
+  if (content && content.type === 'inline') {
+    slug = headingSlug(content.content)
+  }
+  return `<${token.tag} id="${slug}">`
+}
+
 export interface FileInfo {
   name: string
   path: string
@@ -53,7 +67,7 @@ export default {
 }
 
 function slugify(name: string): string {
-  return name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')
+  return name.trim().replace(/\s+/g, '-').replace(/[\/#?[\]]/g, '')
 }
 
 function readProject(root: string, name: string): ProjectData {
