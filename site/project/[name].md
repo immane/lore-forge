@@ -7,7 +7,8 @@ import { data as projects } from '../projects.data.ts'
 import { useRoute, withBase } from 'vitepress'
 
 const route = useRoute()
-const name = route?.params?.name
+const raw = route?.params?.name
+const name = raw ? decodeURIComponent(raw) : undefined
 const project = name ? projects.find(p => p.slug === name) : undefined
 
 function formatName(n) {

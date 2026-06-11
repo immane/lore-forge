@@ -21,7 +21,7 @@ To add a project, place it under `projects/active/` and rebuild the site.
   <a
     v-for="p in projects"
     :key="p.slug"
-    :href="withBase('/project/' + p.slug)"
+    :href="withBase('/project/' + encodeURIComponent(p.slug))"
     class="project-card"
   >
     <h2>{{ p.name }}</h2>
