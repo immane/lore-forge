@@ -69,7 +69,7 @@ lore-forge/
 
 ## 使用指南
 
-Lore Forge 设计用于与 AI 编码和文档智能体协作，如 Codex、Claude Code、OpenCode、Cursor、GitHub Copilot agents、Gemini CLI 等类似工具。
+Lore Forge 设计用于与 AI 编码和文档智能体协作，如 Codex、Claude Code、OpenCode、Hermes Agent、Cursor、GitHub Copilot agents、Gemini CLI 等类似工具。
 
 首先在你的 AI 助手中打开此仓库。大多数智能体平台会自动读取 `AGENTS.md`，或者只需一次提示即可读取。Claude Code 可以使用 `CLAUDE.md`，后者会指向 `AGENTS.md`。
 

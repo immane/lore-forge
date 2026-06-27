@@ -33,7 +33,7 @@ git clone https://github.com/immane/lore-forge.git
 cd lore-forge
 ```
 
-Lore Forge works with AI coding and document agents such as **Codex, Claude Code, OpenCode, Cursor, GitHub Copilot agents, Gemini CLI**, and similar tools. Most agents will read `AGENTS.md` automatically when you open the repo.
+Lore Forge works with AI coding and document agents such as **Codex, Claude Code, OpenCode, Hermes Agent, Cursor, GitHub Copilot agents, Gemini CLI**, and similar tools. Most agents will read `AGENTS.md` automatically when you open the repo.
 
 If your assistant does not automatically load repository instructions, start with:
 

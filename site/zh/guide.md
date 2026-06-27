@@ -33,7 +33,7 @@ git clone https://github.com/immane/lore-forge.git
 cd lore-forge
 ```
 
-Lore Forge 支持 **Codex、Claude Code、OpenCode、Cursor、GitHub Copilot agents、Gemini CLI** 等 AI 编码和文档智能体。打开仓库时大多数工具会自动读取 `AGENTS.md`。
+Lore Forge 支持 **Codex、Claude Code、OpenCode、Hermes Agent、Cursor、GitHub Copilot agents、Gemini CLI** 等 AI 编码和文档智能体。打开仓库时大多数工具会自动读取 `AGENTS.md`。
 
 如果你的助手没有自动加载仓库指令，请从以下开始：
 

@@ -69,7 +69,7 @@ lore-forge/
 
 ## Usage Guide
 
-Lore Forge is designed to work with AI coding and document agents such as Codex, Claude Code, OpenCode, Cursor, GitHub Copilot agents, Gemini CLI, and similar tools.
+Lore Forge is designed to work with AI coding and document agents such as Codex, Claude Code, OpenCode, Hermes Agent, Cursor, GitHub Copilot agents, Gemini CLI, and similar tools.
 
 Start by opening this repository in your AI assistant. Most agent platforms will read `AGENTS.md` automatically or can be asked to read it once. Claude Code can use `CLAUDE.md`, which points back to `AGENTS.md`.
 

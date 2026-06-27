@@ -27,7 +27,7 @@ cd lore-forge
 
 Open the folder in your AI assistant or agent platform.
 
-Supported tools include Codex, Claude Code, OpenCode, Cursor, GitHub Copilot agents, Gemini CLI, and similar coding or document agents.
+Supported tools include Codex, Claude Code, OpenCode, Hermes Agent, Cursor, GitHub Copilot agents, Gemini CLI, and similar coding or document agents.
 
 Most platforms should read `AGENTS.md` automatically. If not, send:
 

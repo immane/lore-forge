@@ -22,7 +22,7 @@ Set up the minimum required MCP servers for this platform by creating or editing
 After setup, verify each tool is working and report which capabilities are now available.
 ```
 
-The agent will create/update the appropriate config file (`.mcp.json`, `.cursor/mcp.json`, `opencode.json`, VS Code `settings.json`, etc.) and install the MCP servers. **You will need to restart your platform** after the config is written for the changes to take effect.
+The agent will create/update the appropriate config file (`.mcp.json`, `.cursor/mcp.json`, `opencode.json`, VS Code `settings.json`, etc.) and install or enable the required MCP servers. **You will need to restart your platform** after the config is written for the changes to take effect.
 
 ---
 
@@ -64,6 +64,36 @@ Add this to `opencode.json` (project-level) or `~/.config/opencode/opencode.json
 | Content search | Native (`grep`/`glob`) | Built-in, no MCP needed |
 | Cross-session memory | MCP (`@agentmemory/mcp`) | Critical — OpenCode has no native session memory |
 | Web search | MCP (`duckduckgo-mcp-server`) or `firecrawl-mcp` | Both require API key for Firecrawl |
+
+---
+
+### Hermes Agent
+
+Hermes Agent supports workspace rules through `AGENTS.md`, so Lore Forge can use the same cross-platform instructions as Codex, Claude Code, OpenCode, Cursor, and other agents. Start Hermes from the Lore Forge repository root so it can read the project files and instructions.
+
+Hermes already provides or can enable the core MCP-style capabilities Lore Forge needs. You normally do **not** need to add duplicate `filesystem`, `memory`, or `web search` servers manually. Instead, verify these capabilities are enabled in Hermes before starting project work:
+
+- filesystem / project file read-write access scoped to the Lore Forge repository
+- cross-session memory
+- web search
+- content search across project Markdown files
+
+Then start Hermes:
+
+```bash
+hermes chat
+```
+
+If you change Hermes MCP or tool settings while Hermes is already running, use `/reload-mcp` or restart the session.
+
+| Capability | Source | Notes |
+|---|---|---|
+| File read/write | Hermes project tools / filesystem capability | Scope access to the Lore Forge repository; do not expose your whole home directory unless needed. |
+| Content search | Hermes project search / filesystem capability | Verify search works before running audits. |
+| Cross-session memory | Hermes memory capability | Critical for long-running Story Bible work. |
+| Web search | Hermes web search capability | Optional but useful for research-heavy phases. |
+
+Hermes can also run as an MCP server via `hermes mcp serve`, but that is optional for Lore Forge. Use it only when another MCP-capable agent needs to communicate through Hermes channels.
 
 ---
 

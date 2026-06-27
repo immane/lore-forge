@@ -27,7 +27,7 @@ cd lore-forge
 
 在 AI 助手或智能体平台中打开此文件夹。
 
-支持的工具有：Codex、Claude Code、OpenCode、Cursor、GitHub Copilot agents、Gemini CLI 以及类似的编码或文档智能体。
+支持的工具有：Codex、Claude Code、OpenCode、Hermes Agent、Cursor、GitHub Copilot agents、Gemini CLI 以及类似的编码或文档智能体。
 
 大多数平台会自动读取 `AGENTS.md`。如果没有，请发送：
 

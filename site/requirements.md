@@ -51,6 +51,36 @@ Add this to `opencode.json` (project-level) or `~/.config/opencode/opencode.json
 
 ---
 
+### Hermes Agent
+
+Hermes Agent supports workspace rules through `AGENTS.md`, so Lore Forge can use the same cross-platform instructions as Codex, Claude Code, OpenCode, Cursor, and other agents. Start Hermes from the Lore Forge repository root so it can read the project files and instructions.
+
+Hermes already provides or can enable the core MCP-style capabilities Lore Forge needs. You normally do **not** need to add duplicate `filesystem`, `memory`, or `web search` servers manually. Instead, verify these capabilities are enabled in Hermes before starting project work:
+
+- filesystem / project file read-write access scoped to the Lore Forge repository
+- cross-session memory
+- web search
+- content search across project Markdown files
+
+Then start Hermes:
+
+```bash
+hermes chat
+```
+
+If you change Hermes MCP or tool settings while Hermes is already running, use `/reload-mcp` or restart the session.
+
+| Capability | Source | Notes |
+|---|---|---|
+| File read/write | Hermes project tools / filesystem capability | Scope access to the Lore Forge repository; do not expose your whole home directory unless needed. |
+| Content search | Hermes project search / filesystem capability | Verify search works before running audits. |
+| Cross-session memory | Hermes memory capability | Critical for long-running Story Bible work. |
+| Web search | Hermes web search capability | Optional but useful for research-heavy phases. |
+
+Hermes can also run as an MCP server via `hermes mcp serve`, but that is optional for Lore Forge. Use it only when another MCP-capable agent needs to communicate through Hermes channels.
+
+---
+
 ### Claude Code
 
 File I/O is native. Add memory and web search via MCP.

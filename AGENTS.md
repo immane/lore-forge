@@ -122,6 +122,6 @@ For Markdown-only changes, verify by reviewing the affected files and checking l
 
 ## Platform Compatibility
 
-This file is the primary cross-platform instruction file for Codex, OpenCode, GitHub Copilot agents, Cursor-like agents, Gemini-style agents, and other coding or document agents that support repository instructions.
+This file is the primary cross-platform instruction file for Codex, OpenCode, Hermes Agent, GitHub Copilot agents, Cursor-like agents, Gemini-style agents, and other coding or document agents that support repository instructions.
 
 Tool-specific files may exist as thin adapters. They should point back to this file instead of duplicating full policy.
